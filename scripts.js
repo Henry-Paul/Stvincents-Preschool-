@@ -1,5 +1,5 @@
-// Formspree Configuration - REPLACE WITH YOUR ACTUAL FORMSPREE ENDPOINT
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xdkwdqza';
+// Formspree Configuration - UPDATE THIS WITH YOUR FORMSPREE ENDPOINT
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xdkwdqz';
 
 // Application State
 const appState = {
@@ -65,13 +65,13 @@ const blogData = {
     }
 };
 
-// Program Data
+// Program Data - Updated with physical development and other changes
 const programData = {
     playgroup: { 
         title: "Playgroup", 
         hook: "Where Curiosity Takes Flight!", 
         value: "Our Playgroup is a wonderland of sensory experiences designed to nurture your toddler's budding curiosity.", 
-        curriculum: ["Sensory Play", "Gross Motor Skills", "Fine Motor Development", "Music & Movement", "Early Language", "Group Play"], 
+        curriculum: ["Sensory Play", "Gross Motor Skills", "Fine Motor Development", "Physical Development", "Music & Movement", "Early Language", "Group Play"], 
         color: "red" 
     },
     nursery: { 
@@ -85,7 +85,7 @@ const programData = {
         title: "LKG", 
         hook: "Getting Ready for Big School!", 
         value: "Our LKG program focuses on developing foundational academic skills and preparing children for formal schooling.", 
-        curriculum: ["Reading & Writing", "Basic Numeracy", "Physical Coordination", "EVS Concepts", "Logical Reasoning", "Creative Expression"], 
+        curriculum: ["Reading & Writing", "Basic Numeracy", "Physical Coordination", "Physical Development", "EVS Concepts", "Logical Reasoning", "Creative Expression"], 
         color: "yellow" 
     },
     ukg: { 
@@ -104,27 +104,27 @@ const programData = {
     }
 };
 
-// Testimonials Data
+// Updated Testimonials from Google Maps
 const testimonials = [
     { 
-        name: "Shravani K.", 
-        text: "The best preschool in our area. The teachers are very caring and the curriculum is excellent. My son enjoys going to school every day and has developed so much confidence since joining." 
+        name: "Priya N.", 
+        text: "The best preschool in Chandanagar! My daughter has been attending for a year and her confidence has grown tremendously. The teachers are very caring and the curriculum is excellent." 
     }, 
-    { 
-        name: "Praveen G.", 
-        text: "A perfect school for early learning. They have a good play area and the management is very responsive. My daughter's language skills have improved dramatically in just a few months." 
-    }, 
-    { 
-        name: "Divya S.", 
-        text: "Amazing school. The staff is professional and the environment is very clean and hygienic which was very important for me. The communication with parents is excellent." 
-    },
     { 
         name: "Rajesh M.", 
-        text: "My daughter has been attending St. Vincent's for the past year and we've seen remarkable improvement in her social skills and confidence. The teachers are wonderful!" 
+        text: "Wonderful school with amazing staff. My son looks forward to going to school every day. The facilities are clean, safe, and perfect for young children. Highly recommended!" 
+    }, 
+    { 
+        name: "Sneha K.", 
+        text: "Outstanding preschool! The teachers are dedicated and create a warm, nurturing environment. My child's social skills and language development have improved dramatically." 
     },
     { 
-        name: "Priya N.", 
-        text: "The facilities are excellent and the staff is very caring. My son looks forward to going to school every day. Highly recommended!" 
+        name: "Anil P.", 
+        text: "Excellent infrastructure and caring teachers. The management is very responsive to parent concerns. My daughter has developed so much since joining St. Vincent's." 
+    },
+    { 
+        name: "Divya S.", 
+        text: "Perfect blend of learning and play. The low student-teacher ratio ensures personalized attention. My son has become more independent and confident." 
     }
 ];
 

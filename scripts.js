@@ -39,7 +39,6 @@ function initializeApp() {
     initializeMobileMenu();
     initializeTestimonials();
     initializeFAQ();
-    initializeCanvas();
     initializeImageSlider();
     initializeModals();
     
@@ -123,95 +122,6 @@ function initializeFAQ() {
     });
 }
 
-// Canvas Drawing (simplified)
-function initializeCanvas() {
-    const canvas = document.getElementById('drawing-canvas');
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    
-    function resizeCanvas() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-        canvas.style.width = `${rect.width}px`;
-        canvas.style.height = `${rect.height}px`;
-        
-        ctx.fillStyle = 'white';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-        ctx.lineWidth = appState.canvasState.brushSize;
-        ctx.strokeStyle = appState.canvasState.currentColor;
-    }
-    
-    let isDrawing = false;
-    
-    function startDrawing(e) { 
-        isDrawing = true; 
-        const rect = canvas.getBoundingClientRect();
-        const x = (e.clientX || e.touches[0].clientX) - rect.left;
-        const y = (e.clientY || e.touches[0].clientY) - rect.top;
-        ctx.beginPath(); 
-        ctx.moveTo(x, y); 
-    }
-    
-    function draw(e) { 
-        if (!isDrawing) return; 
-        e.preventDefault();
-        const rect = canvas.getBoundingClientRect();
-        const x = (e.clientX || e.touches[0].clientX) - rect.left;
-        const y = (e.clientY || e.touches[0].clientY) - rect.top;
-        ctx.lineTo(x, y); 
-        ctx.stroke(); 
-    }
-    
-    function stopDrawing() { 
-        isDrawing = false; 
-        ctx.closePath();
-    }
-    
-    // Event listeners
-    canvas.addEventListener('mousedown', startDrawing);
-    canvas.addEventListener('mousemove', draw);
-    canvas.addEventListener('mouseup', stopDrawing);
-    canvas.addEventListener('mouseleave', stopDrawing);
-    
-    canvas.addEventListener('touchstart', startDrawing);
-    canvas.addEventListener('touchmove', draw);
-    canvas.addEventListener('touchend', stopDrawing);
-    
-    // Color selection
-    document.querySelectorAll('.color-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            appState.canvasState.currentColor = e.target.dataset.color;
-            document.querySelector('.color-btn.active').classList.remove('active');
-            e.target.classList.add('active');
-            ctx.strokeStyle = appState.canvasState.currentColor;
-        });
-    });
-    
-    // Clear canvas
-    document.getElementById('clear-canvas-btn').addEventListener('click', () => {
-        if (confirm('Clear canvas?')) {
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-    });
-    
-    // Save canvas
-    document.getElementById('save-canvas-btn').addEventListener('click', () => {
-        const dataURL = canvas.toDataURL('image/png');
-        const link = document.createElement('a');
-        link.download = 'st-vincents-drawing.png';
-        link.href = dataURL;
-        link.click();
-    });
-    
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-}
-
 // Image Slider
 function initializeImageSlider() {
     const imageSlider = document.getElementById('image-slider');
@@ -262,6 +172,24 @@ function initializeModals() {
         premiumContactBtn.addEventListener('click', createContactModal);
     }
 }
+
+
+    // Program cards -> open program details modal
+    const programCards = document.querySelectorAll('.program-card');
+    programCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const key = card.getAttribute('data-program') || card.dataset.program;
+            createProgramModal(key);
+        });
+    });
+
+    // Read More buttons for feature/blog cards
+    document.querySelectorAll('.open-blog-modal').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const key = btn.getAttribute('data-blog') || btn.dataset.blog;
+            createBlogModal(key);
+        });
+    });
 
 function createContactModal() {
     const modalHTML = `
@@ -426,3 +354,127 @@ function closeModal(overlay) {
         overlay.remove(); 
     }, 300);
 }
+
+// Create Program Details Modal
+function createProgramModal(key) {
+    const contentMap = {
+        playgroup: {
+            title: 'Playgroup',
+            subtitle: "A gentle introduction to school for little explorers",
+            body: `<p>Our Playgroup program (1.5 - 2.5 years) focuses on sensory exploration, social play, and gentle routine-building.</p>
+                   <ul class="list-disc pl-6 mt-4">
+                     <li>Short, structured group activities</li>
+                     <li>Sensory play and motor skill development</li>
+                     <li>Safe, supervised environment for first-time schoolers</li>
+                   </ul>`
+        },
+        nursery: {
+            title: 'Nursery',
+            subtitle: "Foundational growth through play-based learning",
+            body: `<p>Our Nursery program emphasises language development, early numeracy, and social skills through guided play.</p>
+                   <ul class="list-disc pl-6 mt-4">
+                     <li>Story time and phonics introduction</li>
+                     <li>Fine motor skill activities</li>
+                     <li>Interactive group learning</li>
+                   </ul>`
+        },
+        lkg: {
+            title: 'LKG',
+            subtitle: "Kindergarten readiness and confidence building",
+            body: `<p>LKG prepares children with early literacy and math readiness, routine independence and cooperative play.</p>`
+        },
+        ukg: {
+            title: 'UKG',
+            subtitle: "Preparing for formal schooling",
+            body: `<p>UKG focuses on pre-reading, numeracy, and social-emotional skills to ensure a smooth transition to primary school.</p>`
+        },
+        daycare: {
+            title: 'Day Care',
+            subtitle: "Safe and caring environment for young children",
+            body: `<p>Our Day Care option offers a nurturing environment for working parents, with structured routines and personalised care.</p>`
+        }
+    };
+
+    const info = contentMap[key] || { title: 'Program Details', subtitle: '', body: '<p>Details coming soon.</p>' };
+
+    const modalHTML = `
+    <div class="modal-overlay fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 opacity-0">
+      <div class="modal-content bg-white rounded-2xl p-8 max-w-3xl w-full scale-95 transition-transform">
+        <div class="flex justify-between items-start mb-4">
+            <div>
+                <h2 class="text-4xl font-bold text-gray-800">${info.title}</h2>
+                <p class="text-lg text-gray-600 mt-1">${info.subtitle}</p>
+            </div>
+            <button class="close-modal-btn p-1">
+                <i data-lucide="x" class="w-8 h-8 text-gray-500"></i>
+            </button>
+        </div>
+        <div class="prose max-w-none text-gray-700">${info.body}</div>
+      </div>
+    </div>
+    `;
+
+    const container = document.createElement('div');
+    container.innerHTML = modalHTML;
+    const overlay = container.firstElementChild;
+    document.body.appendChild(overlay);
+
+    // Close modal handlers
+    const closeBtn = container.querySelector('.close-modal-btn');
+    closeBtn.addEventListener('click', () => closeModal(overlay));
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal(overlay);
+    });
+
+    lucide.createIcons();
+    showModal(overlay);
+}
+
+// Create Blog / Feature Modal (for Read More buttons)
+function createBlogModal(key) {
+    const blogMap = {
+        science: {
+            title: 'The Science of Early Learning',
+            body: '<p>We use play-based, evidence-backed approaches to encourage cognitive and social development in early years.</p>'
+        },
+        social: {
+            title: 'Social Skills Development',
+            body: '<p>Our curriculum emphasises sharing, empathy, and cooperative play to build strong social foundations.</p>'
+        },
+        primary: {
+            title: 'Preparing for Primary School',
+            body: '<p>Transition-focused programs ensure children enter primary school confident and ready to learn.</p>'
+        }
+    };
+    const info = blogMap[key] || { title: 'Read More', body: '<p>More information coming soon.</p>' };
+    const modalHTML = `
+    <div class="modal-overlay fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 opacity-0">
+      <div class="modal-content bg-white rounded-2xl p-8 max-w-3xl w-full scale-95 transition-transform">
+        <div class="flex justify-between items-start mb-4">
+            <div>
+                <h2 class="text-4xl font-bold text-gray-800">${info.title}</h2>
+            </div>
+            <button class="close-modal-btn p-1">
+                <i data-lucide="x" class="w-8 h-8 text-gray-500"></i>
+            </button>
+        </div>
+        <div class="prose max-w-none text-gray-700">${info.body}</div>
+      </div>
+    </div>
+    `;
+    const container = document.createElement('div');
+    container.innerHTML = modalHTML;
+    const overlay = container.firstElementChild;
+    document.body.appendChild(overlay);
+
+    // Close modal handlers
+    const closeBtn = container.querySelector('.close-modal-btn');
+    closeBtn.addEventListener('click', () => closeModal(overlay));
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal(overlay);
+    });
+
+    lucide.createIcons();
+    showModal(overlay);
+}
+

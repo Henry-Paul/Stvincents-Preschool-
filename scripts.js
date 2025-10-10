@@ -1,4 +1,4 @@
-// Formspree Configuration - UPDATE THIS WITH YOUR FORMSPREE ENDPOINT
+// Formspree Configuration - REPLACE WITH YOUR ACTUAL FORMSPREE ENDPOINT
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xdkwdqz';
 
 // Application State
@@ -141,11 +141,6 @@ function initializeApp() {
     initializeCanvas();
     initializeImageSlider();
     initializeModals();
-    
-    // Auto-open contact modal after 5 seconds
-    setTimeout(() => {
-        createContactModal();
-    }, 5000);
 }
 
 // Mobile Menu
@@ -655,19 +650,19 @@ function createContactModal() {
                     </div>
                     <form id="contact-form" class="space-y-4">
                         <div class="text-2xl">
-                            <label for="parentName" class="font-medium text-gray-700">Parent's Name</label>
+                            <label for="parentName" class="font-medium text-gray-700">Parent's Name *</label>
                             <input type="text" id="parentName" name="parentName" class="w-full mt-1 p-3 crayon-border text-xl" required>
                         </div>
                         <div class="text-2xl">
-                            <label for="phone" class="font-medium text-gray-700">Phone Number</label>
+                            <label for="phone" class="font-medium text-gray-700">Phone Number *</label>
                             <input type="tel" id="phone" name="phone" class="w-full mt-1 p-3 crayon-border text-xl" required>
                         </div>
                         <div class="text-2xl">
-                            <label for="childAge" class="font-medium text-gray-700">Child's Age</label>
+                            <label for="childAge" class="font-medium text-gray-700">Child's Age *</label>
                             <input type="number" id="childAge" name="childAge" min="1" max="8" class="w-full mt-1 p-3 crayon-border text-xl" required>
                         </div>
                         <div class="text-2xl">
-                            <label for="program" class="font-medium text-gray-700">Program Interested In</label>
+                            <label for="program" class="font-medium text-gray-700">Program Interested In *</label>
                             <select id="program" name="program" class="w-full mt-1 p-3 crayon-border text-xl" required>
                                 <option value="">Select a program</option>
                                 <option value="playgroup">Playgroup</option>
@@ -685,7 +680,7 @@ function createContactModal() {
                             <span id="submit-text">Submit Inquiry</span>
                             <div id="submit-spinner" class="spinner hidden" style="width: 20px; height: 20px;"></div>
                         </button>
-                        <p id="contact-form-status" class="text-center font-semibold hidden text-xl"></p>
+                        <p id="contact-form-status" class="text-center font-semibold hidden text-xl p-4 crayon-border"></p>
                     </form>
                 </div>
             </div>
@@ -711,21 +706,23 @@ function createContactModal() {
         statusMessage.classList.add('hidden');
         
         // Prepare form data for Formspree
-        const formData = new FormData();
-        formData.append('parentName', document.getElementById('parentName').value);
-        formData.append('phone', document.getElementById('phone').value);
-        formData.append('childAge', document.getElementById('childAge').value);
-        formData.append('program', document.getElementById('program').value);
-        formData.append('message', document.getElementById('message').value);
-        formData.append('_subject', 'New Preschool Inquiry from Website');
+        const formData = {
+            parentName: document.getElementById('parentName').value,
+            phone: document.getElementById('phone').value,
+            childAge: document.getElementById('childAge').value,
+            program: document.getElementById('program').value,
+            message: document.getElementById('message').value,
+            _subject: 'New Preschool Inquiry from Website'
+        };
         
         try {
             const response = await fetch(FORMSPREE_ENDPOINT, {
                 method: 'POST',
-                body: formData,
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                }
+                },
+                body: JSON.stringify(formData)
             });
             
             if (response.ok) {
@@ -734,19 +731,19 @@ function createContactModal() {
                 statusMessage.className = 'text-center font-semibold text-xl form-success crayon-border p-4';
                 form.reset();
                 
-                // Auto-close and show review modal after success
+                // Auto-close after success
                 setTimeout(() => {
                     closeModal(overlay);
-                    setTimeout(createReviewModal, 300);
                 }, 3000);
             } else {
-                throw new Error('Form submission failed');
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Form submission failed');
             }
         } catch (error) {
             // Error handling
+            console.error('Form submission error:', error);
             statusMessage.textContent = 'Sorry, there was an error submitting your form. Please call us directly at 091009 99312.';
             statusMessage.className = 'text-center font-semibold text-xl form-error crayon-border p-4';
-            console.error('Form submission error:', error);
         } finally {
             // Reset button state
             submitText.classList.remove('hidden');

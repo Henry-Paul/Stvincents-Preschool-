@@ -470,19 +470,221 @@
     <div id="blog-modal-container"></div>
 
     
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68e2de79bb5265194fc7d008/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+    <style>
+        /* WhatsApp Style Chat Widget */
+        .whatsapp-chat-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 10000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .whatsapp-chat-button {
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            position: relative;
+        }
+
+        .whatsapp-chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-chat-button i {
+            color: white;
+            font-size: 32px;
+        }
+
+        .whatsapp-chat-button .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #FF3B30;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            animation: bounce 1s infinite alternate;
+        }
+
+        .whatsapp-chat-tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            width: 220px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
+
+        .whatsapp-chat-tooltip:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            right: 20px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        .whatsapp-chat-button:hover .whatsapp-chat-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Hide default Tawk.to button */
+        .tawk-button-container {
+            display: none !important;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .whatsapp-chat-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-chat-button {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-chat-button i {
+                font-size: 28px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for WhatsApp icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Your website content here -->
+    <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+        <h1>St. Vincent's Preschool</h1>
+        <p>Welcome to our website. Feel free to chat with us using the WhatsApp-style button!</p>
+        <!-- Add your website content here -->
+    </div>
+
+    <!-- WhatsApp Style Chat Widget -->
+    <div class="whatsapp-chat-widget">
+        <div class="whatsapp-chat-button" id="whatsapp-chat-button">
+            <i class="fab fa-whatsapp"></i>
+            <div class="notification-badge">1</div>
+            <div class="whatsapp-chat-tooltip">
+                Chat with us! We're here to help with your preschool questions.
+            </div>
+        </div>
+    </div>
+
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+        // Tawk.to configuration
+        var Tawk_API = Tawk_API || {};
+        var Tawk_LoadStart = new Date();
+        
+        // Hide default Tawk.to button and customize the widget
+        Tawk_API = Tawk_API || {};
+        Tawk_API.onLoad = function() {
+            // Hide the default Tawk.to button
+            if (typeof Tawk_API !== 'undefined') {
+                Tawk_API.hideWidget();
+            }
+            
+            // Customize the widget appearance
+            Tawk_API.setAttributes({
+                'name': 'Website Visitor',
+                'email': 'visitor@example.com',
+            }, function(error) {});
+        };
+
+        // Load Tawk.to script
+        (function() {
+            var s1 = document.createElement("script");
+            var s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/66c7f2f09f5ed798a77a6d5f/1i68b8k9t';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+        // Custom WhatsApp button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappButton = document.getElementById('whatsapp-chat-button');
+            
+            whatsappButton.addEventListener('click', function() {
+                // Show Tawk.to chat widget
+                if (typeof Tawk_API !== 'undefined') {
+                    Tawk_API.maximize();
+                    
+                    // Remove notification badge after first interaction
+                    const badge = this.querySelector('.notification-badge');
+                    if (badge) {
+                        badge.style.display = 'none';
+                    }
+                } else {
+                    // Fallback if Tawk.to doesn't load
+                    alert('Chat service is temporarily unavailable. Please call us at 091009 99312');
+                }
+            });
+            
+            // Auto-show tooltip on page load
+            setTimeout(() => {
+                const tooltip = whatsappButton.querySelector('.whatsapp-chat-tooltip');
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translateY(0)';
+                
+                setTimeout(() => {
+                    tooltip.style.opacity = '0';
+                    tooltip.style.transform = 'translateY(10px)';
+                }, 5000);
+            }, 2000);
+        });
+    </script>
 
     <script src="scripts.js"></script>
 </body>

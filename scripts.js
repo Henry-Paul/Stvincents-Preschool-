@@ -1,5 +1,16 @@
-// Formspree Configuration - REPLACE WITH YOUR ACTUAL FORMSPREE ENDPOINT
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xdkwdqza';
+// EmailJS Configuration - YOU NEED TO SET UP EMAILJS ACCOUNT
+const EMAILJS_CONFIG = {
+    SERVICE_ID: 'service_14zrdg6', // Replace with your EmailJS service ID
+    TEMPLATE_ID: 'template_snxhxlk', // Replace with your EmailJS template ID
+    PUBLIC_KEY: '5SyxCT8kGY0_H51dC' // Replace with your EmailJS public key
+};
+
+// Initialize EmailJS
+(function() {
+    if (EMAILJS_CONFIG.PUBLIC_KEY !== '5SyxCT8kGY0_H51dC') {
+        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+    }
+})();
 
 // Application State
 const appState = {
@@ -691,7 +702,7 @@ function createContactModal() {
     const overlay = container.querySelector('.modal-overlay');
     showModal(overlay);
     
-    // Form submission handling
+    // Form submission handling with EmailJS
     const form = container.querySelector('#contact-form');
     const statusMessage = container.querySelector('#contact-form-status');
     const submitText = container.querySelector('#submit-text');
@@ -700,48 +711,52 @@ function createContactModal() {
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
+        // Check if EmailJS is configured
+        if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+            statusMessage.textContent = 'Email service not configured. Please call us directly at 091009 99312.';
+            statusMessage.className = 'text-center font-semibold text-xl form-error crayon-border p-4';
+            statusMessage.classList.remove('hidden');
+            return;
+        }
+        
         // Show loading state
         submitText.classList.add('hidden');
         submitSpinner.classList.remove('hidden');
         statusMessage.classList.add('hidden');
         
-        // Prepare form data for Formspree
+        // Prepare form data
         const formData = {
             parentName: document.getElementById('parentName').value,
             phone: document.getElementById('phone').value,
             childAge: document.getElementById('childAge').value,
             program: document.getElementById('program').value,
             message: document.getElementById('message').value,
-            _subject: 'New Preschool Inquiry from Website'
+            to_email: 'your-email@stvincents.com', // Change to your receiving email
+            from_name: 'St. Vincent\'s Website',
+            subject: 'New Preschool Inquiry - ' + document.getElementById('parentName').value
         };
         
         try {
-            const response = await fetch(FORMSPREE_ENDPOINT, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
+            // Send email using EmailJS
+            const response = await emailjs.send(
+                EMAILJS_CONFIG.SERVICE_ID,
+                EMAILJS_CONFIG.TEMPLATE_ID,
+                formData
+            );
             
-            if (response.ok) {
-                // Success
-                statusMessage.textContent = 'Thank you! We will contact you soon to schedule your visit.';
-                statusMessage.className = 'text-center font-semibold text-xl form-success crayon-border p-4';
-                form.reset();
-                
-                // Auto-close after success
-                setTimeout(() => {
-                    closeModal(overlay);
-                }, 3000);
-            } else {
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'Form submission failed');
-            }
+            // Success
+            statusMessage.textContent = 'Thank you! We will contact you soon to schedule your visit.';
+            statusMessage.className = 'text-center font-semibold text-xl form-success crayon-border p-4';
+            form.reset();
+            
+            // Auto-close after success
+            setTimeout(() => {
+                closeModal(overlay);
+            }, 3000);
+            
         } catch (error) {
             // Error handling
-            console.error('Form submission error:', error);
+            console.error('Email sending failed:', error);
             statusMessage.textContent = 'Sorry, there was an error submitting your form. Please call us directly at 091009 99312.';
             statusMessage.className = 'text-center font-semibold text-xl form-error crayon-border p-4';
         } finally {

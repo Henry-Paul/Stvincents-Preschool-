@@ -23,7 +23,7 @@ const programData = {
         title: "Playgroup", 
         hook: "Where Curiosity Takes Flight!", 
         value: "Our Playgroup is a wonderland of sensory experiences designed to nurture your toddler's budding curiosity.", 
-        curriculum: ["Sensory Play", "Gross Motor Skills", "Fine Motor Development", "Physical Development", "Music & Movement", "Early Language", "Group Play"], 
+        curriculum: ["Sensory Play", "Gross Motor Skills", "Fine Motor Development", "Physical Development", "Music & Movement", "Early Language"], 
         color: "red" 
     },
     nursery: { 

@@ -240,6 +240,57 @@ function initializeFAQ() {
     });
 }
 
+// FAQ CTA Modal Triggers
+document.querySelectorAll('.open-contact-modal-faq').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const faqType = e.target.getAttribute('data-faq');
+        createContactModal();
+        
+        // Optional: You can pre-fill the form based on FAQ type
+        setTimeout(() => {
+            const programSelect = document.getElementById('program');
+            const messageTextarea = document.getElementById('message');
+            
+            if (programSelect && messageTextarea) {
+                let programValue = '';
+                let additionalMessage = '';
+                
+                switch(faqType) {
+                    case 'ideal-age':
+                        programValue = 'playgroup';
+                        additionalMessage = 'I have questions about the ideal age to start preschool and would like an age assessment.';
+                        break;
+                    case 'preparation':
+                        programValue = '';
+                        additionalMessage = 'I need guidance on preparing my child for preschool and would like to book an orientation session.';
+                        break;
+                    case 'quality-standards':
+                        programValue = '';
+                        additionalMessage = 'I would like to learn more about your quality standards and schedule a tour.';
+                        break;
+                    case 'separation-anxiety':
+                        programValue = '';
+                        additionalMessage = 'I need help with separation anxiety and would like support for my child.';
+                        break;
+                    case 'play-learning':
+                        programValue = '';
+                        additionalMessage = 'I am interested in experiencing your play-based learning approach through a trial session.';
+                        break;
+                }
+                
+                if (programValue && programSelect.querySelector(`option[value="${programValue}"]`)) {
+                    programSelect.value = programValue;
+                }
+                
+                if (additionalMessage) {
+                    messageTextarea.value = additionalMessage;
+                }
+            }
+        }, 100);
+    });
+});
+
 // Canvas Drawing
 function initializeCanvas() {
     const canvas = document.getElementById('drawing-canvas');

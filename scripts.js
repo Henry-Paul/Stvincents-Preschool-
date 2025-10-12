@@ -108,89 +108,34 @@ const blogData = {
     }
 };
 
-// Testimonials Data
+// Testimonial Slider with Improved Text Formatting
 const testimonials = [
     { 
-        name: "Priya N.", 
-        text: "The best preschool in Chandanagar! My daughter has been attending for a year and her confidence has grown tremendously. The teachers are very caring and the curriculum is excellent." 
+        name: "Shravani K.", 
+        text: "The best preschool in our area. The teachers are very caring and the curriculum is excellent. My son enjoys going to school every day and has developed so much confidence since joining." 
     }, 
     { 
-        name: "Rajesh M.", 
-        text: "Wonderful school with amazing staff. My son looks forward to going to school every day. The facilities are clean, safe, and perfect for young children. Highly recommended!" 
+        name: "Praveen G.", 
+        text: "A perfect school for early learning. They have a good play area and the management is very responsive. My daughter's language skills have improved dramatically in just a few months." 
     }, 
-    { 
-        name: "Sneha K.", 
-        text: "Outstanding preschool! The teachers are dedicated and create a warm, nurturing environment. My child's social skills and language development have improved dramatically." 
-    },
-    { 
-        name: "Anil P.", 
-        text: "Excellent infrastructure and caring teachers. The management is very responsive to parent concerns. My daughter has developed so much since joining St. Vincent's." 
-    },
     { 
         name: "Divya S.", 
-        text: "Perfect blend of learning and play. The low student-teacher ratio ensures personalized attention. My son has become more independent and confident." 
+        text: "Amazing school. The staff is professional and the environment is very clean and hygienic which was very important for me. The communication with parents is excellent." 
+    },
+    { 
+        name: "Rajesh M.", 
+        text: "My daughter has been attending St. Vincent's for the past year and we've seen remarkable improvement in her social skills and confidence. The teachers are wonderful!" 
+    },
+    { 
+        name: "Priya N.", 
+        text: "The facilities are excellent and the staff is very caring. My son looks forward to going to school every day. Highly recommended!" 
     }
 ];
-
-// Initialize Application
-document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
-});
-
-function initializeApp() {
-    lucide.createIcons();
-    initializeMobileMenu();
-    initializeTestimonials();
-    initializeFAQ();
-    initializeCanvas();
-    initializeImageSlider();
-    initializeModals();
-    
-    // Initialize EmailJS only if config is set
-    if (EMAILJS_CONFIG.PUBLIC_KEY && EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-        console.log('EmailJS initialized');
-    }
-}
-
-// Mobile Menu
-function initializeMobileMenu() {
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-}
-
-// Testimonials Slider
-function initializeTestimonials() {
-    const slider = document.getElementById('testimonial-slider');
-    if (!slider) return;
-
-    renderTestimonials();
-    
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    
-    if (nextBtn) {
-        nextBtn.addEventListener('click', showNextTestimonial);
-    }
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', showPrevTestimonial);
-    }
-    
-    // Auto-advance testimonials
-    setInterval(showNextTestimonial, 5000);
-}
+const slider = document.getElementById('testimonial-slider');
+let currentIndex = 0;
 
 function renderTestimonials() {
-    const slider = document.getElementById('testimonial-slider');
     if (!slider) return;
-    
     slider.innerHTML = testimonials.map(t => `
         <div class="testimonial-slide p-4 flex-shrink-0">
             <div class="bg-yellow-100 p-8 rounded-xl crayon-border">
@@ -199,25 +144,27 @@ function renderTestimonials() {
             </div>
         </div>
     `).join('');
-    
-    updateTestimonialSlider();
 }
 
-function showNextTestimonial() {
-    appState.currentTestimonialIndex = (appState.currentTestimonialIndex + 1) % testimonials.length;
-    updateTestimonialSlider();
-}
-
-function showPrevTestimonial() {
-    appState.currentTestimonialIndex = (appState.currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
-    updateTestimonialSlider();
-}
-
-function updateTestimonialSlider() {
-    const slider = document.getElementById('testimonial-slider');
+function updateSlider() { 
     if (slider) {
-        slider.style.transform = `translateX(-${appState.currentTestimonialIndex * 100}%)`;
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`; 
     }
+}
+
+function showNext() { 
+    currentIndex = (currentIndex + 1) % testimonials.length; 
+    updateSlider(); 
+}
+
+if (slider) {
+    document.getElementById('nextBtn').addEventListener('click', showNext);
+    document.getElementById('prevBtn').addEventListener('click', () => { 
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length; 
+        updateSlider(); 
+    });
+    setInterval(showNext, 5000);
+    renderTestimonials();
 }
 
 // FAQ Accordion

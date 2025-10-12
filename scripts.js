@@ -34,16 +34,16 @@ const programData = {
         color: "blue" 
     },
     lkg: { 
-        title: "LKG", 
+        title: "Pre-Primary 1", 
         hook: "Getting Ready for Big School!", 
-        value: "Our LKG program focuses on developing foundational academic skills and preparing children for formal schooling.", 
+        value: "Our Pre-Primary 1 program focuses on developing foundational academic skills and preparing children for formal schooling.", 
         curriculum: ["Reading & Writing", "Basic Numeracy", "Physical Coordination", "Physical Development", "EVS Concepts", "Logical Reasoning", "Creative Expression"], 
         color: "yellow" 
     },
     ukg: { 
-        title: "UKG", 
+        title: "Pre-Primary 2", 
         hook: "Advanced Preparation for Primary School!", 
-        value: "Our UKG program ensures children are fully prepared for primary school with comprehensive skill development.", 
+        value: "Our program ensures children are fully prepared for primary school with comprehensive skill development.", 
         curriculum: ["Advanced Reading & Writing", "Mathematical Concepts", "Physical Development", "Science Exploration", "Problem Solving", "Public Speaking"], 
         color: "green" 
     },
@@ -103,7 +103,7 @@ const blogData = {
                 <li><strong>Following Instructions:</strong> Listening and task completion</li>
                 <li><strong>Classroom Etiquette:</strong> Raising hands, taking turns, group participation</li>
             </ul>
-            <p>Our UKG program specifically focuses on developing the skills and confidence needed for a successful transition to primary school.</p>
+            <p>Our Pre-Primary 2 program specifically focuses on developing the skills and confidence needed for a successful transition to primary school.</p>
         `
     }
 };
@@ -676,8 +676,8 @@ function createContactModal() {
                                 <option value="">Select a program</option>
                                 <option value="playgroup">Playgroup</option>
                                 <option value="nursery">Nursery</option>
-                                <option value="lkg">LKG</option>
-                                <option value="ukg">UKG</option>
+                                <option value="lkg">Pre-Primary 1</option>
+                                <option value="ukg">Pre-Primary 2</option>
                                 <option value="daycare">Day Care</option>
                             </select>
                         </div>

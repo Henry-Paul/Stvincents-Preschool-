@@ -30,7 +30,7 @@ const programData = {
         title: "Nursery", 
         hook: "Building Blocks for a Bright Future!", 
         value: "In Nursery, we build upon natural curiosity by introducing foundational concepts in literacy and numeracy.", 
-        curriculum: ["Phonics", "Pre-writing Skills", "Number Recognition", "Physical Development Activities", "Colors & Shapes", "Storytelling"], 
+        curriculum: ["Phonics", "Pre-writing Skills", "Number Recognition", "Physical Development", "Colors & Shapes", "Storytelling"], 
         color: "blue" 
     },
     lkg: { 

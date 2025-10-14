@@ -108,7 +108,7 @@ const blogData = {
     }
 };
 
-// Testimonial Slider
+// Testimonial Slider with Improved Text Formatting
 const testimonials = [
     { 
         name: "Shravani K.", 
@@ -137,18 +137,19 @@ let currentIndex = 0;
 function renderTestimonials() {
     if (!slider) return;
     slider.innerHTML = testimonials.map(t => `
-        <div class="testimonial-slide p-4 flex-shrink-0" style="min-width:100%;">
+        <div class="testimonial-slide p-4 flex-shrink-0">
             <div class="bg-yellow-100 p-8 rounded-xl crayon-border">
                 <p class="font-body text-gray-600 testimonial-text">"${t.text}"</p>
                 <p class="font-bold text-gray-800 mt-6 text-2xl text-right">- ${t.name}</p>
             </div>
         </div>
     `).join('');
-    updateSlider();
 }
 
 function updateSlider() { 
-    if (slider) slider.style.transform = `translateX(-${currentIndex * 100}%)`; 
+    if (slider) {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`; 
+    }
 }
 
 function showNext() { 
@@ -156,9 +157,14 @@ function showNext() {
     updateSlider(); 
 }
 
-function showPrev() {
-    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-    updateSlider();
+if (slider) {
+    document.getElementById('nextBtn').addEventListener('click', showNext);
+    document.getElementById('prevBtn').addEventListener('click', () => { 
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length; 
+        updateSlider(); 
+    });
+    setInterval(showNext, 5000);
+    renderTestimonials();
 }
 
 // FAQ Accordion
@@ -188,6 +194,7 @@ document.querySelectorAll('.open-contact-modal-faq').forEach(btn => {
         const faqType = e.target.getAttribute('data-faq');
         createContactModal();
         
+        // Optional: You can pre-fill the form based on FAQ type
         setTimeout(() => {
             const programSelect = document.getElementById('program');
             const messageTextarea = document.getElementById('message');
@@ -247,14 +254,17 @@ function initializeCanvas() {
         canvas.style.height = `${rect.height}px`;
         ctx.scale(dpr, dpr);
         
+        // Set drawing properties
         ctx.lineCap = 'round'; 
         ctx.lineJoin = 'round'; 
         ctx.lineWidth = appState.canvasState.brushSize;
         ctx.strokeStyle = appState.canvasState.currentColor;
         ctx.fillStyle = appState.canvasState.currentColor;
         
+        // Draw background and grid
         drawCanvasBackground();
         
+        // Reset drawing settings
         ctx.lineWidth = appState.canvasState.brushSize;
         ctx.strokeStyle = appState.canvasState.currentColor;
         ctx.fillStyle = appState.canvasState.currentColor;
@@ -264,6 +274,7 @@ function initializeCanvas() {
         ctx.fillStyle = 'white';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
+        // Draw grid lines
         ctx.strokeStyle = 'rgba(0,0,0,0.05)';
         ctx.lineWidth = 1;
         const gridSize = 20;
@@ -300,6 +311,7 @@ function initializeCanvas() {
             ctx.beginPath(); 
             ctx.moveTo(x, y); 
         } else if (appState.canvasState.currentTool === 'fill') {
+            // Simple flood fill implementation
             const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
             const targetColor = getPixelColor(imageData, x, y);
             floodFill(imageData, x, y, targetColor, hexToRgb(appState.canvasState.currentColor));
@@ -322,6 +334,7 @@ function initializeCanvas() {
         }
     }
     
+    // Flood fill algorithm helpers
     function getPixelColor(imageData, x, y) {
         const index = (y * imageData.width + x) * 4;
         return {
@@ -383,10 +396,12 @@ function initializeCanvas() {
         }
     }
     
+    // Event listeners for drawing
     ['mousedown', 'touchstart'].forEach(e => canvas.addEventListener(e, startDrawing));
     ['mousemove', 'touchmove'].forEach(e => canvas.addEventListener(e, draw));
     ['mouseup', 'mouseleave', 'touchend'].forEach(e => canvas.addEventListener(e, stopDrawing));
     
+    // Color selection
     document.querySelectorAll('.color-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             appState.canvasState.currentColor = e.target.dataset.color;
@@ -394,15 +409,19 @@ function initializeCanvas() {
             e.target.classList.add('active');
             ctx.strokeStyle = appState.canvasState.currentColor;
             ctx.fillStyle = appState.canvasState.currentColor;
+            
+            // Update brush preview
             document.getElementById('brush-preview').style.backgroundColor = appState.canvasState.currentColor;
         });
     });
     
+    // Tool selection
     document.querySelectorAll('.tool-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             appState.canvasState.currentTool = e.currentTarget.dataset.tool;
             document.querySelector('.tool-btn.active').classList.remove('active');
             e.currentTarget.classList.add('active');
+            
             if (appState.canvasState.currentTool === 'eraser') {
                 ctx.strokeStyle = 'white';
                 ctx.fillStyle = 'white';
@@ -413,6 +432,7 @@ function initializeCanvas() {
         });
     });
     
+    // Brush size control
     const brushSizeControl = document.getElementById('brush-size');
     const brushPreview = document.getElementById('brush-preview');
     
@@ -420,23 +440,27 @@ function initializeCanvas() {
         brushSizeControl.addEventListener('input', (e) => {
             appState.canvasState.brushSize = parseInt(e.target.value);
             ctx.lineWidth = appState.canvasState.brushSize;
+            
+            // Update brush preview size
             const size = Math.max(5, appState.canvasState.brushSize / 2);
             brushPreview.style.width = `${size}px`;
             brushPreview.style.height = `${size}px`;
         });
     }
     
+    // Clear canvas
     const clearCanvasBtn = document.getElementById('clear-canvas-btn');
     if (clearCanvasBtn) {
         clearCanvasBtn.addEventListener('click', () => {
             if (confirm('Are you sure you want to clear the canvas?')) {
                 ctx.fillStyle = 'white';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
-                resizeCanvas();
+                resizeCanvas(); // Redraw grid
             }
         });
     }
     
+    // Save canvas
     const saveCanvasBtn = document.getElementById('save-canvas-btn');
     if (saveCanvasBtn) {
         saveCanvasBtn.addEventListener('click', () => {
@@ -448,23 +472,34 @@ function initializeCanvas() {
         });
     }
     
+    // Random color
     const randomColorBtn = document.getElementById('random-color-btn');
     if (randomColorBtn) {
         randomColorBtn.addEventListener('click', () => {
             const colors = ['#ef4444', '#3b82f6', '#22c55e', '#facc15', '#a855f7', '#ec4899', '#f97316', '#14b8a6'];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             appState.canvasState.currentColor = randomColor;
+            
+            // Update active color button
             document.querySelector('.color-btn.active').classList.remove('active');
             const colorBtn = document.querySelector(`.color-btn[data-color="${randomColor}"]`);
-            if (colorBtn) colorBtn.classList.add('active');
+            if (colorBtn) {
+                colorBtn.classList.add('active');
+            }
+            
             ctx.strokeStyle = appState.canvasState.currentColor;
             ctx.fillStyle = appState.canvasState.currentColor;
+            
+            // Update brush preview
             document.getElementById('brush-preview').style.backgroundColor = appState.canvasState.currentColor;
         });
     }
     
+    // Initialize canvas
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
+    
+    // Set initial brush preview
     if (brushPreview) {
         brushPreview.style.width = `${appState.canvasState.brushSize/2}px`;
         brushPreview.style.height = `${appState.canvasState.brushSize/2}px`;
@@ -475,9 +510,13 @@ function initializeCanvas() {
 function initializeImageSlider() {
     const imageSlider = document.getElementById('image-slider');
     const sliderDots = document.querySelectorAll('.slider-dot');
+    
     if (!imageSlider) return;
+    
     function updateImageSlider() {
         imageSlider.style.transform = `translateX(-${appState.currentImageSlideIndex * 100}%)`;
+        
+        // Update active dot
         sliderDots.forEach((dot, index) => {
             if (index === appState.currentImageSlideIndex) {
                 dot.classList.add('active');
@@ -486,43 +525,57 @@ function initializeImageSlider() {
             }
         });
     }
+    
     function nextSlide() {
         appState.currentImageSlideIndex = (appState.currentImageSlideIndex + 1) % sliderDots.length;
         updateImageSlider();
     }
+    
     function prevSlide() {
         appState.currentImageSlideIndex = (appState.currentImageSlideIndex - 1 + sliderDots.length) % sliderDots.length;
         updateImageSlider();
     }
+    
+    // Initialize slider navigation
     const nextBtn = document.getElementById('slider-next');
     const prevBtn = document.getElementById('slider-prev');
+    
     if (nextBtn) nextBtn.addEventListener('click', nextSlide);
     if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    
+    // Add click events to dots
     sliderDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             appState.currentImageSlideIndex = index;
             updateImageSlider();
         });
     });
+    
+    // Auto-advance slides
     setInterval(nextSlide, 4000);
-    updateImageSlider();
 }
 
 // Modal System
 function initializeModals() {
+    // Program modals
     document.querySelectorAll('.program-card').forEach(card => { 
         card.addEventListener('click', () => createProgramModal(card.dataset.program)); 
     });
+    
+    // Blog modals
     document.querySelectorAll('.open-blog-modal').forEach(btn => {
         btn.addEventListener('click', () => {
             const blogId = btn.getAttribute('data-blog');
             createBlogModal(blogId);
         });
     });
+    
+    // Contact modal triggers
     document.getElementById('open-contact-modal').addEventListener('click', createContactModal);
     document.getElementById('open-contact-modal-mobile').addEventListener('click', createContactModal);
     document.getElementById('open-contact-modal-hero').addEventListener('click', createContactModal);
     document.getElementById('open-contact-modal-bottom').addEventListener('click', createContactModal);
+    
     const premiumContactBtn = document.querySelector('.open-contact-modal-premium');
     if (premiumContactBtn) {
         premiumContactBtn.addEventListener('click', createContactModal);
@@ -532,6 +585,7 @@ function initializeModals() {
 function createProgramModal(programId) {
     const data = programData[programId];
     if (!data) return;
+    
     const modalHTML = `
         <div class="modal-overlay fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 opacity-0">
             <div class="modal-content bg-paper crayon-border w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
@@ -564,20 +618,26 @@ function createProgramModal(programId) {
                 </div>
             </div>
         </div>`;
+    
     const container = document.getElementById('modal-container');
     container.innerHTML = modalHTML;
     showModal(container.querySelector('.modal-overlay'));
+    
+    // Add event listeners for the new modal
     const overlay = container.querySelector('.modal-overlay');
     const closeBtn = container.querySelector('.close-modal-btn');
     const contactBtn = container.querySelector('.open-contact-modal-from-program');
+    
     closeBtn.addEventListener('click', () => closeModal(overlay));
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) closeModal(overlay);
     });
+    
     contactBtn.addEventListener('click', () => {
         closeModal(overlay);
         setTimeout(createContactModal, 300);
     });
+    
     lucide.createIcons();
 }
 
@@ -632,24 +692,34 @@ function createContactModal() {
                 </div>
             </div>
         </div>`;
+    
     const container = document.getElementById('contact-modal-container');
     container.innerHTML = modalHTML;
     const overlay = container.querySelector('.modal-overlay');
     showModal(overlay);
+    
+    // Form submission handling
     const form = container.querySelector('#contact-form');
     const statusMessage = container.querySelector('#contact-form-status');
     const submitText = container.querySelector('#submit-text');
     const submitSpinner = container.querySelector('#submit-spinner');
+    
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
+        
+        // Check if EmailJS is configured
         if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
             showFormMessage('Email service not configured. Please call us directly at 091009 99312.', 'error');
             return;
         }
+        
+        // Show loading state
         submitText.classList.add('hidden');
         submitSpinner.classList.remove('hidden');
         statusMessage.classList.add('hidden');
+        
         try {
+            // Get form data
             const formData = {
                 parentName: document.getElementById('parentName').value,
                 phone: document.getElementById('phone').value,
@@ -657,6 +727,8 @@ function createContactModal() {
                 program: document.getElementById('program').value,
                 message: document.getElementById('message').value || 'No additional message'
             };
+            
+            // Prepare template parameters
             const templateParams = {
                 name: formData.parentName,
                 time: new Date().toLocaleString(),
@@ -670,40 +742,59 @@ Message: ${formData.message}
 Submitted from St. Vincent's Preschool website.
                 `.trim()
             };
+            
+            console.log('Sending email with params:', templateParams);
+            
+            // Send email using EmailJS
             const response = await emailjs.send(
                 EMAILJS_CONFIG.SERVICE_ID,
                 EMAILJS_CONFIG.TEMPLATE_ID,
                 templateParams
             );
+            
+            console.log('Email sent successfully:', response);
+            
+            // Success
             showFormMessage('Thank you! We will contact you soon to schedule your visit.', 'success');
             form.reset();
+            
+            // Auto-close after success
             setTimeout(() => {
                 closeModal(overlay);
             }, 3000);
+            
         } catch (error) {
+            console.error('Email sending failed:', error);
             showFormMessage('Sorry, there was an error. Please call us directly at 091009 99312.', 'error');
         } finally {
+            // Reset button state
             submitText.classList.remove('hidden');
             submitSpinner.classList.add('hidden');
         }
+        
         function showFormMessage(message, type) {
             statusMessage.textContent = message;
             statusMessage.className = `text-center font-semibold text-xl form-${type} crayon-border p-4`;
             statusMessage.classList.remove('hidden');
         }
     });
+    
+    // Close modal handlers
     const closeBtn = container.querySelector('.close-modal-btn');
     closeBtn.addEventListener('click', () => closeModal(overlay));
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) closeModal(overlay);
     });
+    
     lucide.createIcons();
 }
 
 function createBlogModal(blogId) {
     const data = blogData[blogId];
     if (!data) return;
+    
     const color = blogId === 'science' ? 'blue' : blogId === 'social' ? 'green' : 'purple';
+    
     const modalHTML = `
         <div class="modal-overlay fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 opacity-0">
             <div class="modal-content bg-paper crayon-border w-full max-w-4xl max-h-[90vh] overflow-y-auto transform scale-95 blog-modal-content">
@@ -733,24 +824,68 @@ function createBlogModal(blogId) {
                 </div>
             </div>
         </div>`;
+    
     const container = document.getElementById('blog-modal-container');
     container.innerHTML = modalHTML;
     const overlay = container.querySelector('.modal-overlay');
     showModal(overlay);
+    
+    // Close modal handlers
     const closeBtn = container.querySelector('.close-modal-btn');
     const closeBlogBtn = container.querySelector('.close-blog-modal');
+    
     closeBtn.addEventListener('click', () => closeModal(overlay));
     closeBlogBtn.addEventListener('click', () => closeModal(overlay));
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) closeModal(overlay);
     });
+    
     lucide.createIcons();
 }
 
-// Google Review Modal (DISABLED, not triggered anywhere)
-// If you want to keep but only show manually, you can comment out this function or triggers.
 function createReviewModal() {
-    // ... code as before, but not called anywhere ...
+    const modalHTML = `
+        <div class="modal-overlay fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 opacity-0">
+            <div class="modal-content bg-paper crayon-border w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95">
+                <div class="p-8 text-center">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-full">
+                            <h2 class="text-5xl font-bold text-gray-800">Thank You!</h2>
+                            <p class="text-xl text-gray-600 mt-2">We appreciate your interest in St. Vincent's Preschool.</p>
+                        </div>
+                        <button class="close-modal-btn p-1">
+                            <i data-lucide="x" class="w-8 h-8 text-gray-500"></i>
+                        </button>
+                    </div>
+                    <div class="bg-yellow-100 p-6 crayon-border mb-6">
+                        <i data-lucide="star" class="w-16 h-16 text-yellow-500 mx-auto mb-4"></i>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Help Other Parents Discover Us</h3>
+                        <p class="font-body text-gray-600 mb-6">Would you like to share your experience with other parents by leaving a Google review?</p>
+                        <a href="https://g.page/r/CbNp6tq5qJ7-EB0/review" target="_blank" class="crayon-button bg-green-500 text-white font-bold px-8 py-4 text-xl inline-flex items-center gap-2">
+                            <i data-lucide="star" class="w-6 h-6"></i> Leave a Google Review
+                        </a>
+                    </div>
+                    <button class="close-review-modal crayon-button bg-gray-400 text-white font-bold px-8 py-4 text-xl">Maybe Later</button>
+                </div>
+            </div>
+        </div>`;
+    
+    const container = document.getElementById('review-modal-container');
+    container.innerHTML = modalHTML;
+    const overlay = container.querySelector('.modal-overlay');
+    showModal(overlay);
+    
+    // Close modal handlers
+    const closeBtn = container.querySelector('.close-modal-btn');
+    const laterBtn = container.querySelector('.close-review-modal');
+    
+    closeBtn.addEventListener('click', () => closeModal(overlay));
+    laterBtn.addEventListener('click', () => closeModal(overlay));
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal(overlay);
+    });
+    
+    lucide.createIcons();
 }
 
 function showModal(overlay) {
@@ -768,15 +903,3 @@ function closeModal(overlay) {
         overlay.remove(); 
     }, 300);
 }
-
-// --- Initialization ---
-window.addEventListener('DOMContentLoaded', () => {
-    renderTestimonials();
-    document.getElementById('nextBtn')?.addEventListener('click', showNext);
-    document.getElementById('prevBtn')?.addEventListener('click', showPrev);
-    setInterval(showNext, 5000);
-    initializeImageSlider();
-    initializeFAQ();
-    initializeCanvas();
-    initializeModals();
-});

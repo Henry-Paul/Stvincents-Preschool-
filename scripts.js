@@ -1,8 +1,8 @@
 // EmailJS Configuration - UPDATE THESE WITH YOUR ACTUAL VALUES
 const EMAILJS_CONFIG = {
-    SERVICE_ID: 'service_14zrdg6', // Get from EmailJS → Email Services
-    TEMPLATE_ID: 'template_snxhxlk', // Get from EmailJS → Email Templates  
-    PUBLIC_KEY: '5SyxCT8kGY0_H51dC' // Get from EmailJS → Account → API Keys
+    SERVICE_ID: 'Enter your ID', // Get from EmailJS → Email Services
+    TEMPLATE_ID: 'Enter your id', // Get from EmailJS → Email Templates  
+    PUBLIC_KEY: 'Enter your ID' // Get from EmailJS → Account → API Keys
 };
 
 // Application State

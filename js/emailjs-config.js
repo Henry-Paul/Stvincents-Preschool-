@@ -1,7 +1,7 @@
 // EmailJS Configuration
 const EMAILJS_CONFIG = {
-    SERVICE_ID: 'service_up2vw5t',
-    TEMPLATE_ID: 'template_contact_form',  
+    SERVICE_ID: 'service_14zrdg6',
+    TEMPLATE_ID: 'template_snxhxlk',  
     PUBLIC_KEY: '5SyxCT8kGY0_H51dC' // Replace with your actual public key
 };
 

@@ -314,7 +314,7 @@ function setupFormSubmission(contactForm, overlay, isAutoPopup) {
         console.log('Sending form data:', formData);
         
         // Check if EmailJS is properly configured
-        if (!EMAILJS_CONFIG.PUBLIC_KEY || EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY_HERE') {
+        if (!EMAILJS_CONFIG.PUBLIC_KEY || EMAILJS_CONFIG.PUBLIC_KEY === '5SyxCT8kGY0_H51dC') {
             console.error('EmailJS not properly configured');
             showFormError(errorMessage, submitText, submitSpinner);
             return;

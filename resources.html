@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Parent Resources — St. Vincent's Preschool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#fff7ed]">
+
+  <header class="bg-[#8b2b58] text-[#f8e6d6] shadow fixed w-full z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="font-bold flex items-center gap-2">
+        <img src="images/logo.png" alt="logo" class="w-12 h-12 object-contain">
+        <div>
+          <div>St. Vincent's</div>
+          <div class="text-xs">Resources</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-6 items-center">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="programs.html" class="hover:text-white">Programs</a>
+        <a href="gallery.html" class="hover:text-white">Gallery</a>
+        <a href="faq.html" class="hover:text-white">FAQ</a>
+        <a href="contact.html" class="hover:text-white">Contact</a>
+      </nav>
+
+      <button id="menu-btn" class="md:hidden text-2xl" aria-label="Toggle menu">☰</button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-[#6f1f44] border-t">
+      <div class="px-4 py-4 space-y-2">
+        <a href="index.html" class="block py-2">Home</a>
+        <a href="programs.html" class="block py-2">Programs</a>
+        <a href="gallery.html" class="block py-2">Gallery</a>
+        <a href="faq.html" class="block py-2">FAQ</a>
+        <a href="contact.html" class="block py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 pt-28 pb-20">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-[#3b0b27]">Resources for Parents</h1>
+      <p class="text-gray-700 mt-2">Expert guides to support your child's early learning journey.</p>
+    </section>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-2xl">🧠</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Brain Development</h3>
+        <p class="text-gray-600">Learn how early experiences shape your child's brain and development during these critical years.</p>
+        <div class="mt-4 space-y-2 text-sm">
+          <p>✓ Neuroplasticity in early childhood</p>
+          <p>✓ Learning through play</p>
+          <p>✓ Milestones to watch for</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-2xl">👥</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Social Skills</h3>
+        <p class="text-gray-600">Discover how to nurture empathy, cooperation, and friendship-building at home.</p>
+        <div class="mt-4 space-y-2 text-sm">
+          <p>✓ Emotional intelligence</p>
+          <p>✓ Sharing and cooperation</p>
+          <p>✓ Managing big emotions</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-2xl">📚</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Language & Literacy</h3>
+        <p class="text-gray-600">Simple strategies to build vocabulary and foster a love of reading early on.</p>
+        <div class="mt-4 space-y-2 text-sm">
+          <p>✓ Early literacy activities</p>
+          <p>✓ Storytelling techniques</p>
+          <p>✓ Phonics foundations</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="contact.html" class="btn-primary">Get Personalized Guidance</a>
+    </div>
+  </main>
+
+  <footer class="bg-[#8b2b58] text-white mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
+      <div>
+        <img src="images/logo.png" alt="logo" class="w-20 mb-3">
+        <p class="text-gray-200">St. Vincent's Preschool — Nurturing early learning in Chandanagar.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-gray-200">
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Contact</h4>
+        <p class="mt-2 text-gray-200">+91 9032249494<br/>Stvincent.school25@gmail.com</p>
+      </div>
+    </div>
+    <div class="text-center py-4 text-sm bg-[#6a1a3a]">© 2025 St. Vincent's Preschool & Daycare. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

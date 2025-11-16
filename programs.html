@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Programs — St. Vincent's Preschool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="bg-white shadow fixed w-full z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Home">
+        <img src="images/logo.png" alt="logo" class="w-12 h-12 object-contain">
+        <div>
+          <div class="text-xl font-semibold">St. Vincent's</div>
+          <div class="text-xs text-gray-500 -mt-1">Preschool & Daycare</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-6 items-center" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Home</a>
+        <a href="programs.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Programs</a>
+        <a href="gallery.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Gallery</a>
+        <a href="faq.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">FAQ</a>
+        <a href="blogs.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Blog</a>
+        <a href="contact.html" class="btn-primary-outline">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button id="back-btn" class="hidden md:inline-flex items-center gap-2 text-sm text-gray-600">← Back</button>
+        <button id="menu-btn" class="md:hidden p-2 rounded text-lg" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2">
+        <a href="index.html" class="py-2">Home</a>
+        <a href="programs.html" class="py-2">Programs</a>
+        <a href="gallery.html" class="py-2">Gallery</a>
+        <a href="faq.html" class="py-2">FAQ</a>
+        <a href="blogs.html" class="py-2">Blog</a>
+        <a href="contact.html" class="py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 pt-28 pb-20">
+    <section class="py-12">
+      <h1 class="text-4xl font-bold text-center">Our Programs</h1>
+      <p class="text-center text-gray-600 mt-2">Choose the perfect program for your child.</p>
+
+      <div class="grid md:grid-cols-2 gap-8 mt-8">
+        <div class="p-6 rounded-xl shadow-lg border-l-4 border-l-yellow-500">
+          <h3 class="text-2xl font-bold">Playgroup</h3>
+          <p class="text-sm text-gray-600 mt-1">Age: 1.5–2.5 years</p>
+          <ul class="mt-4 space-y-2 text-gray-700">
+            <li>✓ Short sessions & gentle settling</li>
+            <li>✓ Low teacher:child ratio</li>
+            <li>✓ Sensory and social play</li>
+          </ul>
+          <button class="mt-4 btn-primary-outline">Enquire</button>
+        </div>
+
+        <div class="p-6 rounded-xl shadow-lg border-l-4 border-l-green-500">
+          <h3 class="text-2xl font-bold">Nursery</h3>
+          <p class="text-sm text-gray-600 mt-1">Age: 2.5–3.5 years</p>
+          <ul class="mt-4 space-y-2 text-gray-700">
+            <li>✓ Foundation literacy & numeracy</li>
+            <li>✓ Pre-reading skills</li>
+            <li>✓ Group confidence activities</li>
+          </ul>
+          <button class="mt-4 btn-primary-outline">Enquire</button>
+        </div>
+
+        <div class="p-6 rounded-xl shadow-lg border-l-4 border-l-blue-500">
+          <h3 class="text-2xl font-bold">Pre-Primary 1</h3>
+          <p class="text-sm text-gray-600 mt-1">Age: 3.5–4.5 years</p>
+          <ul class="mt-4 space-y-2 text-gray-700">
+            <li>✓ Pre-writing & phonemic awareness</li>
+            <li>✓ Early numeracy</li>
+            <li>✓ School readiness skills</li>
+          </ul>
+          <button class="mt-4 btn-primary-outline">Enquire</button>
+        </div>
+
+        <div class="p-6 rounded-xl shadow-lg border-l-4 border-l-red-500">
+          <h3 class="text-2xl font-bold">Pre-Primary 2</h3>
+          <p class="text-sm text-gray-600 mt-1">Age: 4.5–6 years</p>
+          <ul class="mt-4 space-y-2 text-gray-700">
+            <li>✓ Reading & arithmetic basics</li>
+            <li>✓ Independent learning</li>
+            <li>✓ Primary school readiness</li>
+          </ul>
+          <button class="mt-4 btn-primary-outline">Enquire</button>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#8b2b58] text-white mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
+      <div>
+        <img src="images/logo.png" alt="logo" class="w-20 mb-3">
+        <p class="text-gray-200">St. Vincent's Preschool — Nurturing early learning in Chandanagar.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-gray-200">
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Contact</h4>
+        <p class="mt-2 text-gray-200">+91 9032249494<br/>Stvincent.school25@gmail.com</p>
+      </div>
+    </div>
+    <div class="text-center py-4 text-sm bg-[#6a1a3a]">© 2025 St. Vincent's Preschool & Daycare. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
+      });
+    }
+  </script>
+</body>
+</html>

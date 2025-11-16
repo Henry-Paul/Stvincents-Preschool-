@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>FAQ — St. Vincent's Preschool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bg-white shadow fixed w-full z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Home">
+        <img src="images/logo.png" alt="logo" class="w-12 h-12 object-contain">
+        <div>
+          <div class="text-xl font-semibold">St. Vincent's</div>
+          <div class="text-xs text-gray-500 -mt-1">Preschool & Daycare</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-6 items-center" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Home</a>
+        <a href="programs.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Programs</a>
+        <a href="gallery.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Gallery</a>
+        <a href="faq.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">FAQ</a>
+        <a href="blogs.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Blog</a>
+        <a href="contact.html" class="btn-primary-outline">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button id="back-btn" class="hidden md:inline-flex items-center gap-2 text-sm text-gray-600">← Back</button>
+        <button id="menu-btn" class="md:hidden p-2 rounded text-lg" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2">
+        <a href="index.html" class="py-2">Home</a>
+        <a href="programs.html" class="py-2">Programs</a>
+        <a href="gallery.html" class="py-2">Gallery</a>
+        <a href="faq.html" class="py-2">FAQ</a>
+        <a href="blogs.html" class="py-2">Blog</a>
+        <a href="contact.html" class="py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 pt-28 pb-20">
+    <section class="py-12">
+      <h1 class="text-4xl font-bold text-center">Frequently Asked Questions</h1>
+      <p class="text-center text-gray-600 mt-2">Find answers to common questions about preschool.</p>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <div class="p-4 rounded-lg border">
+          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
+            <div>What is the ideal age to start preschool?</div>
+            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
+          </div>
+          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
+            <p>Children typically start between 1.5–3 years depending on readiness. Our Playgroup caters to 1.5+ with gentle settling and sensory play.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-lg border">
+          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
+            <div>How can I prepare my toddler for preschool?</div>
+            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
+          </div>
+          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
+            <p>Start short separation practices, encourage simple routines (handwashing, snack time), read books daily, and practice simple self-help tasks.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-lg border">
+          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
+            <div>What should I look for in a quality preschool?</div>
+            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
+          </div>
+          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
+            <p>Safe environment, trained teachers, play-based curriculum, low student-teacher ratio, hygiene & clear communication with parents.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-lg border">
+          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
+            <div>What is the teacher-to-child ratio?</div>
+            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
+          </div>
+          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
+            <p>We maintain ratios: Playgroup 1:6, Nursery 1:8, Pre-Primary 1:10 to provide focused attention.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-lg border">
+          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
+            <div>Do you provide meals and manage allergies?</div>
+            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
+          </div>
+          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
+            <p>Yes — nutritious meals and snacks provided. Please share allergies at enrollment; strict protocols prevent cross contamination.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-lg border">
+          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
+            <div>How do I enroll my child?</div>
+            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
+          </div>
+          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
+            <p>Complete the enquiry form and our team will contact you for a tour, fee details, and admission steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#8b2b58] text-white mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
+      <div>
+        <img src="images/logo.png" alt="logo" class="w-20 mb-3">
+        <p class="text-gray-200">St. Vincent's Preschool — Nurturing early learning in Chandanagar.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-gray-200">
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Contact</h4>
+        <p class="mt-2 text-gray-200">+91 9032249494<br/>Stvincent.school25@gmail.com</p>
+      </div>
+    </div>
+    <div class="text-center py-4 text-sm bg-[#6a1a3a]">© 2025 St. Vincent's Preschool & Daycare. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
+      });
+    }
+
+    document.querySelectorAll('.faq-q').forEach(question => {
+      question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const sign = this.querySelector('.sign');
+        const isOpen = this.getAttribute('aria-expanded') === 'true';
+        
+        document.querySelectorAll('.faq-q').forEach(q => {
+          if(q !== this) {
+            q.setAttribute('aria-expanded', 'false');
+            if(q.nextElementSibling) q.nextElementSibling.style.maxHeight = '0';
+            if(q.querySelector('.sign')) q.querySelector('.sign').textContent = '+';
+          }
+        });
+
+        if(isOpen) {
+          answer.style.maxHeight = '0';
+          this.setAttribute('aria-expanded', 'false');
+          sign.textContent = '+';
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          this.setAttribute('aria-expanded', 'true');
+          sign.textContent = '−';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,152 +1,102 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — St. Vincent's Preschool</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header class="bg-white shadow fixed w-full z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3" aria-label="Home">
-        <img src="images/logo.png" alt="logo" class="w-12 h-12 object-contain">
+<body class="bg-[#fffaf8] text-gray-800">
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="container flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/logo.png" alt="logo" class="w-12 h-12 object-contain rounded-md">
         <div>
-          <div class="text-xl font-semibold">St. Vincent's</div>
-          <div class="text-xs text-gray-500 -mt-1">Preschool & Daycare</div>
+          <div class="text-xl font-bold text-[#8b2b58]">St. Vincent's</div>
         </div>
       </a>
-
-      <nav class="hidden md:flex gap-6 items-center" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Home</a>
-        <a href="programs.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Programs</a>
-        <a href="gallery.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Gallery</a>
-        <a href="faq.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">FAQ</a>
-        <a href="blogs.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Blog</a>
-        <a href="contact.html" class="btn-primary-outline">Contact</a>
+      <nav class="hidden md:flex gap-6">
+        <a href="index.html">Home</a>
+        <a href="programs.html">Programs</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Resources</a>
       </nav>
-
-      <div class="flex items-center gap-3">
-        <button id="back-btn" class="hidden md:inline-flex items-center gap-2 text-sm text-gray-600">← Back</button>
-        <button id="menu-btn" class="md:hidden p-2 rounded text-lg" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">☰</button>
-      </div>
-    </div>
-
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2">
-        <a href="index.html" class="py-2">Home</a>
-        <a href="programs.html" class="py-2">Programs</a>
-        <a href="gallery.html" class="py-2">Gallery</a>
-        <a href="faq.html" class="py-2">FAQ</a>
-        <a href="blogs.html" class="py-2">Blog</a>
-        <a href="contact.html" class="py-2">Contact</a>
-      </div>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 pt-28 pb-20">
-    <section class="py-12">
-      <h1 class="text-4xl font-bold text-center">Contact Us</h1>
-      <p class="text-center text-gray-600 mt-2">We'd love to hear from you. Get in touch today!</p>
+  <main class="container py-12">
+    <h1 class="text-3xl font-bold mb-6">Get in Touch</h1>
 
-      <div class="grid md:grid-cols-2 gap-8 mt-12">
-        <div>
-          <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
-          
-          <div class="mb-6">
-            <h4 class="font-semibold text-lg mb-2">📍 Address</h4>
-            <p class="text-gray-700">Street 1, Plot 454, Aparna Hillpark Rd, KSR Layout, PJR Layout, Chandanagar, Hyderabad</p>
-          </div>
-
-          <div class="mb-6">
-            <h4 class="font-semibold text-lg mb-2">📞 Phone</h4>
-            <p class="text-gray-700"><a href="tel:+919032249494" class="text-[#8b2b58] hover:underline">+91 9032249494</a></p>
-          </div>
-
-          <div class="mb-6">
-            <h4 class="font-semibold text-lg mb-2">✉️ Email</h4>
-            <p class="text-gray-700"><a href="mailto:Stvincent.school25@gmail.com" class="text-[#8b2b58] hover:underline">Stvincent.school25@gmail.com</a></p>
-          </div>
-
-          <div class="mb-6">
-            <h4 class="font-semibold text-lg mb-2">🕒 Hours</h4>
-            <p class="text-gray-700">Monday - Friday: 9:00 AM - 5:00 PM<br/>Saturday: 10:00 AM - 2:00 PM<br/>Sunday: Closed</p>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-bold mb-4">Send us a Message</h3>
-          <form class="space-y-4">
-            <div>
-              <label class="block text-sm font-medium mb-1">Name</label>
-              <input type="text" class="w-full p-2 border rounded-lg" placeholder="Your name">
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Email</label>
-              <input type="email" class="w-full p-2 border rounded-lg" placeholder="Your email">
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Program Interest</label>
-              <select class="w-full p-2 border rounded-lg">
-                <option>Select a program</option>
-                <option>Playgroup</option>
-                <option>Nursery</option>
-                <option>Pre-Primary 1</option>
-                <option>Pre-Primary 2</option>
-                <option>Day Care</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Message</label>
-              <textarea class="w-full p-2 border rounded-lg" rows="4" placeholder="Your message"></textarea>
-            </div>
-            <button type="submit" class="btn-primary w-full">Send Message</button>
-          </form>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="font-semibold">Visit Our Campus</h3>
+        <p class="text-gray-600 mt-2">Street 1, Plot 454, Aparna Hillpark Rd, KSR Layout, PJR Layout, Chandanagar, Hyderabad</p>
+        <div class="mt-6">
+          <a class="btn-primary" href="https://www.google.com/maps" target="_blank">Open in Maps</a>
         </div>
       </div>
 
-      <div class="mt-12">
-        <h3 class="text-2xl font-bold mb-4">📍 Visit Us</h3>
-        <div class="w-full h-80 rounded-lg overflow-hidden shadow">
-          <iframe src="https://www.google.com/maps?q=Street+1,+Plot+454,+Aparna+Hillpark+Road,+Chandanagar+Hyderabad&output=embed" style="border:0;width:100%;height:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </section>
-  </main>
+      <div>
+        <h3 class="font-semibold mb-3">Schedule a Visit</h3>
 
-  <footer class="bg-[#8b2b58] text-white mt-12">
-    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
-      <div>
-        <img src="images/logo.png" alt="logo" class="w-20 mb-3">
-        <p class="text-gray-200">St. Vincent's Preschool — Nurturing early learning in Chandanagar.</p>
-      </div>
-      <div>
-        <h4 class="font-semibold">Quick Links</h4>
-        <ul class="mt-3 space-y-2 text-gray-200">
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="blogs.html">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold">Contact</h4>
-        <p class="mt-2 text-gray-200">+91 9032249494<br/>Stvincent.school25@gmail.com</p>
+        <form id="contact-form" class="contact-form space-y-4">
+            <div class="form-group">
+                <label for="parentName">Parent's Name</label>
+                <input type="text" id="parentName" name="parentName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="childAge">Child's Age</label>
+                <select id="childAge" name="childAge" required>
+                    <option value="">Select age range</option>
+                    <option value="1.5 to 2 years">1.5 to 2 years</option>
+                    <option value="2 to 3 years">2 to 3 years</option>
+                    <option value="3 to 4 years">3 to 4 years</option>
+                    <option value="4 to 5 years">4 to 5 years</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="program">Program Interested In</label>
+                <select id="program" name="program" required>
+                    <option value="">Select a program</option>
+                    <option value="playgroup">Playgroup</option>
+                    <option value="nursery">Nursery</option>
+                    <option value="lkg">Pre-Primary 1</option>
+                    <option value="ukg">Pre-Primary 2</option>
+                    <option value="daycare">Day Care</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Additional Message (Optional)</label>
+                <textarea id="message" name="message" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="crayon-button flex items-center justify-center gap-2">
+                <span id="submit-text">Submit Inquiry</span>
+                <div id="submit-spinner" class="spinner hidden" aria-hidden="true"></div>
+            </button>
+
+            <p id="contact-form-success-message" class="form-success hidden">
+                Thank you! We'll call you soon!
+            </p>
+
+            <p id="contact-form-error-message" class="form-error hidden">
+                There was an error submitting your form. Please try again or call us directly.
+            </p>
+        </form>
+
       </div>
     </div>
-    <div class="text-center py-4 text-sm bg-[#6a1a3a]">© 2025 St. Vincent's Preschool & Daycare. All rights reserved.</div>
-  </footer>
+  </main>
 
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if(menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-        menuBtn.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
-      });
-    }
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="js/site-core.js"></script>
 </body>
 </html>

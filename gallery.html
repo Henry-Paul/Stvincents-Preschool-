@@ -1,63 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gallery — St. Vincent's Preschool</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse St. Vincent's Preschool gallery. See our classrooms, play areas, and activities.">
+    <meta name="theme-color" content="#3f1444">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Gallery - St. Vincent's Preschool</title>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><img src="images/logo.png" class="logo"><div class="brand-text"><div class="title">St. Vincent's</div></div></a>
-      <nav class="nav-desktop"><a href="index.html">Home</a><a href="programs.html">Programs</a><a href="gallery.html">Gallery</a><a href="blog.html">Resources</a></nav>
-      <button id="menu-btn" class="menu-btn"></button>
-    </div>
-    <div id="mobile-menu" class="mobile-menu hidden">...</div>
-  </header>
-
-  <main class="container py-10">
-    <h1>Gallery</h1>
-
-    <!-- Slider -->
-    <div class="gallery-slider" aria-label="Gallery slider">
-      <div id="image-slider" class="slider-track">
-        <div class="image-slide"><img class="responsive-img" src="images/gallery/preschool-1.jpeg" data-full="images/gallery/preschool-1.jpeg" alt=""></div>
-        <div class="image-slide"><img class="responsive-img" src="images/gallery/preschool-2.jpeg" data-full="images/gallery/preschool-2.jpeg" alt=""></div>
-        <div class="image-slide"><img class="responsive-img" src="images/gallery/preschool-3.jpeg" data-full="images/gallery/preschool-3.jpeg" alt=""></div>
-      </div>
-      <div class="slider-controls">
-        <button id="slide-prev" class="slider-btn">◀</button>
-        <button id="slide-next" class="slider-btn">▶</button>
-      </div>
-    </div>
-
-    <div class="mt-6">
-      <h2>Video Preview</h2>
-      <div class="video-poster responsive-frame" data-video="">
-        <img src="images/gallery/video-poster.jpg" data-video="" alt="Video preview">
-      </div>
-    </div>
-
-    <section class="mt-8 card">
-      <h3>Schedule a Visit</h3>
-      <form id="contact-form" class="contact-form">
-        <div class="form-group"><label>Parent's Name</label><input name="parentName" required></div>
-        <div class="form-group"><label>Phone Number</label><input name="phone" type="tel" required></div>
-        <div class="form-group"><label>Child's Age</label>
-          <select name="childAge" required><option value="">Select</option><option>1.5 to 2 years</option><option>2 to 3 years</option><option>3 to 4 years</option></select>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><div class="logo-text"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="programs.html" class="nav-link">Programs</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="contact.html" class="btn-primary nav-cta">Enroll Now</a>
+            </nav>
+            <button id="menu-btn" class="menu-btn"><span class="menu-icon"><span></span><span></span><span></span></span></button>
         </div>
-        <div class="form-group"><label>Program Interested In</label>
-          <select name="program" required><option value="">Select</option><option>playgroup</option><option>nursery</option></select>
+        <nav id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="mobile-menu-link"><i class="fas fa-home"></i> Home</a>
+            <a href="programs.html" class="mobile-menu-link"><i class="fas fa-graduation-cap"></i> Programs</a>
+            <a href="gallery.html" class="mobile-menu-link"><i class="fas fa-images"></i> Gallery</a>
+            <a href="contact.html" class="mobile-menu-link mobile-menu-cta"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section style="background: linear-gradient(135deg, #3f1444 0%, #5a1d5e 100%); padding: 80px 0 60px; color: white; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 48px; margin-bottom: 16px;">Photo Gallery</h1>
+                <p style="font-size: 18px; opacity: 0.9;">See our vibrant classrooms and happy children</p>
+            </div>
+        </section>
+        
+        <section style="padding: 80px 0; background: white;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3;">
+                        <img src="images/gallery/classroom-1.jpg" alt="Classroom" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; font-size: 18px; font-weight: 600;">Bright Classrooms</div>
+                    </div>
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3;">
+                        <img src="images/gallery/playground.jpg" alt="Playground" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; font-size: 18px; font-weight: 600;">Play Areas</div>
+                    </div>
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3;">
+                        <img src="images/gallery/activity.jpg" alt="Activities" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; font-size: 18px; font-weight: 600;">Creative Activities</div>
+                    </div>
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3;">
+                        <img src="images/gallery/learning.jpg" alt="Learning" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; font-size: 18px; font-weight: 600;">Learning Sessions</div>
+                    </div>
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3;">
+                        <img src="images/gallery/outdoor.jpg" alt="Outdoor" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; font-size: 18px; font-weight: 600;">Outdoor Fun</div>
+                    </div>
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3;">
+                        <img src="images/gallery/music.jpg" alt="Music" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; font-size: 18px; font-weight: 600;">Music & Dance</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i><a href="tel:+919032249494">+91 9032249494</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 St. Vincent's Preschool</p></div>
         </div>
-        <div class="form-group"><label>Message</label><textarea name="message"></textarea></div>
-        <button type="submit" class="crayon-button"><span id="submit-text">Submit Inquiry</span><div id="submit-spinner" class="spinner hidden"></div></button>
-        <p id="contact-form-success-message" class="form-success hidden">Thank you! We'll call you soon!</p>
-      </form>
-    </section>
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="js/site-core.js"></script>
+    </footer>
+    
+    <a href="https://wa.me/919032249494" class="whatsapp-widget" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script src="js/main.js"></script>
 </body>
 </html>

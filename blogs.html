@@ -1,110 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="St. Vincent's Preschool blog - Expert tips on early childhood education, parenting advice, and child development insights.">
-    <meta name="theme-color" content="#3f1444">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Blog - St. Vincent's Preschool</title>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resources — St. Vincent's Preschool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo"><div class="logo-text"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div></a>
-            <nav class="nav-desktop">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="programs.html" class="nav-link">Programs</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
-                <a href="blogs.html" class="nav-link active">Blog</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
-                <a href="contact.html" class="btn-primary nav-cta">Enroll Now</a>
-            </nav>
-            <button id="menu-btn" class="menu-btn"><span class="menu-icon"><span></span><span></span><span></span></span></button>
-        </div>
-        <nav id="mobile-menu" class="mobile-menu">
-            <a href="index.html" class="mobile-menu-link"><i class="fas fa-home"></i> Home</a>
-            <a href="programs.html" class="mobile-menu-link"><i class="fas fa-graduation-cap"></i> Programs</a>
-            <a href="gallery.html" class="mobile-menu-link"><i class="fas fa-images"></i> Gallery</a>
-            <a href="contact.html" class="mobile-menu-link mobile-menu-cta"><i class="fas fa-envelope"></i> Contact</a>
-        </nav>
-    </header>
-    
-    <main>
-        <section style="background: linear-gradient(135deg, #3f1444 0%, #5a1d5e 100%); padding: 80px 0 60px; color: white; text-align: center;">
-            <div class="container">
-                <h1 style="font-size: 48px; margin-bottom: 16px;">Our Blog</h1>
-                <p style="font-size: 18px; opacity: 0.9;">Expert tips and insights on early childhood education</p>
-            </div>
-        </section>
-        
-        <section style="padding: 80px 0; background: white;">
-            <div class="container">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
-                    <article style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
-                            <img src="images/blog/play-learning.jpg" alt="Play-based learning" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-                            <span style="position: absolute; top: 16px; left: 16px; padding: 6px 12px; background: #d4a574; color: white; font-size: 12px; font-weight: 600; border-radius: 20px; text-transform: uppercase;">Child Development</span>
-                        </div>
-                        <div style="padding: 24px;">
-                            <time style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #999; margin-bottom: 12px;"><i class="fas fa-calendar"></i> October 28, 2024</time>
-                            <h3 style="font-size: 20px; color: #3f1444; margin-bottom: 12px;">Why Play Matters in Early Childhood</h3>
-                            <p style="font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 16px;">Discover how play-based learning supports cognitive, social, and physical development in the crucial early years...</p>
-                            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #3f1444;">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    
-                    <article style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
-                            <img src="images/blog/school-readiness.jpg" alt="School readiness" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-                            <span style="position: absolute; top: 16px; left: 16px; padding: 6px 12px; background: #d4a574; color: white; font-size: 12px; font-weight: 600; border-radius: 20px; text-transform: uppercase;">School Readiness</span>
-                        </div>
-                        <div style="padding: 24px;">
-                            <time style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #999; margin-bottom: 12px;"><i class="fas fa-calendar"></i> October 15, 2024</time>
-                            <h3 style="font-size: 20px; color: #3f1444; margin-bottom: 12px;">Preparing Your Child for Primary School</h3>
-                            <p style="font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 16px;">Essential strategies for helping your child transition to formal schooling with confidence and ease...</p>
-                            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #3f1444;">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    
-                    <article style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
-                            <img src="images/blog/parenting-tips.jpg" alt="Parenting tips" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-                            <span style="position: absolute; top: 16px; left: 16px; padding: 6px 12px; background: #d4a574; color: white; font-size: 12px; font-weight: 600; border-radius: 20px; text-transform: uppercase;">Parenting Tips</span>
-                        </div>
-                        <div style="padding: 24px;">
-                            <time style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #999; margin-bottom: 12px;"><i class="fas fa-calendar"></i> October 1, 2024</time>
-                            <h3 style="font-size: 20px; color: #3f1444; margin-bottom: 12px;">10 Daily Activities to Boost Learning at Home</h3>
-                            <p style="font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 16px;">Short, actionable tips to encourage curiosity and maintain a supportive learning routine at home...</p>
-                            <a href="#" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #3f1444;">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">Contact</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-phone-alt"></i><a href="tel:+919032249494">+91 9032249494</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 2025 St. Vincent's Preschool</p></div>
-        </div>
-    </footer>
-    
-    <a href="https://wa.me/919032249494" class="whatsapp-widget" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <script src="js/main.js"></script>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.png" class="logo"><div class="brand-text"><div class="title">St. Vincent's</div></div></a>
+      <nav class="nav-desktop"><a href="index.html">Home</a><a href="programs.html">Programs</a><a href="gallery.html">Gallery</a><a href="blog.html">Resources</a></nav>
+      <button id="menu-btn" class="menu-btn"></button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu hidden">...</div>
+  </header>
+
+  <main class="container py-10">
+    <h1>Parenting & Early Learning Blog</h1>
+
+    <div class="grid md:grid-cols-3 gap-8 mt-6">
+      <article class="card">
+        <img src="images/resources/early-learning.jpg" alt="" class="rounded-md mb-4">
+        <h3>Why Play Matters</h3>
+        <p class="muted">How play-based learning supports development.</p>
+        <div class="mt-4"><button class="btn-small open-blog" data-blog-id="1">Read Blog</button> <button class="btn-outline open-contact-modal" data-program="Why Play Matters">Enquire</button></div>
+      </article>
+
+      <article class="card">
+        <img src="images/resources/social-skills.jpg" alt="" class="rounded-md mb-4">
+        <h3>Social Skills Development</h3>
+        <p class="muted">Sharing, empathy and cooperation.</p>
+        <div class="mt-4"><button class="btn-small open-blog" data-blog-id="2">Read Blog</button> <button class="btn-outline open-contact-modal" data-program="Social Skills">Enquire</button></div>
+      </article>
+
+      <article class="card">
+        <img src="images/resources/primary-school.jpg" alt="" class="rounded-md mb-4">
+        <h3>Preparing for Primary School</h3>
+        <p class="muted">Transition strategies and readiness.</p>
+        <div class="mt-4"><button class="btn-small open-blog" data-blog-id="3">Read Blog</button> <button class="btn-outline open-contact-modal" data-program="Preparing for Primary School">Enquire</button></div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Blog modal (content populated by site-core.js; scrollable) -->
+  <div id="blog-modal" class="blog-modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card modal-content">
+      <button class="modal-close">&times;</button>
+      <div id="blog-modal-body" class="modal-inner-scroll"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="js/site-core.js"></script>
 </body>
 </html>

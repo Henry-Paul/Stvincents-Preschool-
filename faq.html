@@ -1,177 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>FAQ — St. Vincent's Preschool</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently asked questions about St. Vincent's Preschool - admission, fees, curriculum, facilities, and more.">
+    <meta name="theme-color" content="#3f1444">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>FAQ - St. Vincent's Preschool</title>
 </head>
 <body>
-  <header class="bg-white shadow fixed w-full z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3" aria-label="Home">
-        <img src="images/logo.png" alt="logo" class="w-12 h-12 object-contain">
-        <div>
-          <div class="text-xl font-semibold">St. Vincent's</div>
-          <div class="text-xs text-gray-500 -mt-1">Preschool & Daycare</div>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><div class="logo-text"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="programs.html" class="nav-link">Programs</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="faq.html" class="nav-link active">FAQ</a>
+                <a href="contact.html" class="btn-primary nav-cta">Enroll Now</a>
+            </nav>
+            <button id="menu-btn" class="menu-btn"><span class="menu-icon"><span></span><span></span><span></span></span></button>
         </div>
-      </a>
-
-      <nav class="hidden md:flex gap-6 items-center" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Home</a>
-        <a href="programs.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Programs</a>
-        <a href="gallery.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Gallery</a>
-        <a href="faq.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">FAQ</a>
-        <a href="blogs.html" class="nav-link text-gray-700 hover:text-[#8b2b58]">Blog</a>
-        <a href="contact.html" class="btn-primary-outline">Contact</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <button id="back-btn" class="hidden md:inline-flex items-center gap-2 text-sm text-gray-600">← Back</button>
-        <button id="menu-btn" class="md:hidden p-2 rounded text-lg" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">☰</button>
-      </div>
-    </div>
-
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2">
-        <a href="index.html" class="py-2">Home</a>
-        <a href="programs.html" class="py-2">Programs</a>
-        <a href="gallery.html" class="py-2">Gallery</a>
-        <a href="faq.html" class="py-2">FAQ</a>
-        <a href="blogs.html" class="py-2">Blog</a>
-        <a href="contact.html" class="py-2">Contact</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-4 pt-28 pb-20">
-    <section class="py-12">
-      <h1 class="text-4xl font-bold text-center">Frequently Asked Questions</h1>
-      <p class="text-center text-gray-600 mt-2">Find answers to common questions about preschool.</p>
-
-      <div class="mt-8 grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-        <div class="p-4 rounded-lg border">
-          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
-            <div>What is the ideal age to start preschool?</div>
-            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
-          </div>
-          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
-            <p>Children typically start between 1.5–3 years depending on readiness. Our Playgroup caters to 1.5+ with gentle settling and sensory play.</p>
-          </div>
-        </div>
-
-        <div class="p-4 rounded-lg border">
-          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
-            <div>How can I prepare my toddler for preschool?</div>
-            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
-          </div>
-          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
-            <p>Start short separation practices, encourage simple routines (handwashing, snack time), read books daily, and practice simple self-help tasks.</p>
-          </div>
-        </div>
-
-        <div class="p-4 rounded-lg border">
-          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
-            <div>What should I look for in a quality preschool?</div>
-            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
-          </div>
-          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
-            <p>Safe environment, trained teachers, play-based curriculum, low student-teacher ratio, hygiene & clear communication with parents.</p>
-          </div>
-        </div>
-
-        <div class="p-4 rounded-lg border">
-          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
-            <div>What is the teacher-to-child ratio?</div>
-            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
-          </div>
-          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
-            <p>We maintain ratios: Playgroup 1:6, Nursery 1:8, Pre-Primary 1:10 to provide focused attention.</p>
-          </div>
-        </div>
-
-        <div class="p-4 rounded-lg border">
-          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
-            <div>Do you provide meals and manage allergies?</div>
-            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
-          </div>
-          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
-            <p>Yes — nutritious meals and snacks provided. Please share allergies at enrollment; strict protocols prevent cross contamination.</p>
-          </div>
-        </div>
-
-        <div class="p-4 rounded-lg border">
-          <div class="faq-q cursor-pointer flex justify-between items-center" aria-expanded="false">
-            <div>How do I enroll my child?</div>
-            <div class="sign" style="width:28px;height:28px;border-radius:6px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;">+</div>
-          </div>
-          <div class="faq-a mt-3 text-gray-700" style="max-height:0;overflow:hidden;transition:max-height .28s ease">
-            <p>Complete the enquiry form and our team will contact you for a tour, fee details, and admission steps.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-[#8b2b58] text-white mt-12">
-    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
-      <div>
-        <img src="images/logo.png" alt="logo" class="w-20 mb-3">
-        <p class="text-gray-200">St. Vincent's Preschool — Nurturing early learning in Chandanagar.</p>
-      </div>
-      <div>
-        <h4 class="font-semibold">Quick Links</h4>
-        <ul class="mt-3 space-y-2 text-gray-200">
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="blogs.html">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold">Contact</h4>
-        <p class="mt-2 text-gray-200">+91 9032249494<br/>Stvincent.school25@gmail.com</p>
-      </div>
-    </div>
-    <div class="text-center py-4 text-sm bg-[#6a1a3a]">© 2025 St. Vincent's Preschool & Daycare. All rights reserved.</div>
-  </footer>
-
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if(menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-        menuBtn.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
-      });
-    }
-
-    document.querySelectorAll('.faq-q').forEach(question => {
-      question.addEventListener('click', function() {
-        const answer = this.nextElementSibling;
-        const sign = this.querySelector('.sign');
-        const isOpen = this.getAttribute('aria-expanded') === 'true';
+        <nav id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="mobile-menu-link"><i class="fas fa-home"></i> Home</a>
+            <a href="programs.html" class="mobile-menu-link"><i class="fas fa-graduation-cap"></i> Programs</a>
+            <a href="gallery.html" class="mobile-menu-link"><i class="fas fa-images"></i> Gallery</a>
+            <a href="contact.html" class="mobile-menu-link mobile-menu-cta"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section style="background: linear-gradient(135deg, #3f1444 0%, #5a1d5e 100%); padding: 80px 0 60px; color: white; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 48px; margin-bottom: 16px;">Frequently Asked Questions</h1>
+                <p style="font-size: 18px; opacity: 0.9;">Find answers to common questions about our preschool</p>
+            </div>
+        </section>
         
-        document.querySelectorAll('.faq-q').forEach(q => {
-          if(q !== this) {
-            q.setAttribute('aria-expanded', 'false');
-            if(q.nextElementSibling) q.nextElementSibling.style.maxHeight = '0';
-            if(q.querySelector('.sign')) q.querySelector('.sign').textContent = '+';
-          }
-        });
-
-        if(isOpen) {
-          answer.style.maxHeight = '0';
-          this.setAttribute('aria-expanded', 'false');
-          sign.textContent = '+';
-        } else {
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-          this.setAttribute('aria-expanded', 'true');
-          sign.textContent = '−';
-        }
-      });
-    });
-  </script>
+        <section style="padding: 80px 0; background: white;">
+            <div class="container" style="max-width: 900px;">
+                <div style="margin-bottom: 24px; background: #fff7ed; padding: 24px; border-radius: 12px;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-question-circle" style="color: #d4a574; font-size: 20px; margin-top: 2px;"></i>
+                        <h3 style="font-size: 18px; font-weight: 600; color: #3f1444; margin: 0;">What age groups do you accept?</h3>
+                    </div>
+                    <p style="font-size: 16px; line-height: 1.6; color: #666; margin: 16px 0 0 32px;">We accept children from 1.5 years to 6 years across our five programs: Playgroup (1.5-3 years), Nursery (3-4 years), LKG (4-5 years), UKG (5-6 years), and Daycare (1.5+ years).</p>
+                </div>
+                
+                <div style="margin-bottom: 24px; background: #fff7ed; padding: 24px; border-radius: 12px;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-question-circle" style="color: #d4a574; font-size: 20px; margin-top: 2px;"></i>
+                        <h3 style="font-size: 18px; font-weight: 600; color: #3f1444; margin: 0;">What are your operating hours?</h3>
+                    </div>
+                    <p style="font-size: 16px; line-height: 1.6; color: #666; margin: 16px 0 0 32px;">Regular programs run from 9:00 AM to 1:00 PM, Monday to Friday. Our Daycare program extends until 7:00 PM for working parents. Saturday sessions are available from 9:00 AM to 1:00 PM.</p>
+                </div>
+                
+                <div style="margin-bottom: 24px; background: #fff7ed; padding: 24px; border-radius: 12px;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-question-circle" style="color: #d4a574; font-size: 20px; margin-top: 2px;"></i>
+                        <h3 style="font-size: 18px; font-weight: 600; color: #3f1444; margin: 0;">What curriculum do you follow?</h3>
+                    </div>
+                    <p style="font-size: 16px; line-height: 1.6; color: #666; margin: 16px 0 0 32px;">We follow the Early Years Foundation Stage (EYFS) curriculum, which is internationally recognized for its holistic approach to early childhood development. It focuses on learning through play while building academic, social, and emotional skills.</p>
+                </div>
+                
+                <div style="margin-bottom: 24px; background: #fff7ed; padding: 24px; border-radius: 12px;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-question-circle" style="color: #d4a574; font-size: 20px; margin-top: 2px;"></i>
+                        <h3 style="font-size: 18px; font-weight: 600; color: #3f1444; margin: 0;">Do you provide meals?</h3>
+                    </div>
+                    <p style="font-size: 16px; line-height: 1.6; color: #666; margin: 16px 0 0 32px;">Yes, nutritious snacks and meals are provided. Our Daycare program includes breakfast, lunch, and evening snacks. All meals are freshly prepared, balanced, and suitable for young children.</p>
+                </div>
+                
+                <div style="margin-bottom: 24px; background: #fff7ed; padding: 24px; border-radius: 12px;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-question-circle" style="color: #d4a574; font-size: 20px; margin-top: 2px;"></i>
+                        <h3 style="font-size: 18px; font-weight: 600; color: #3f1444; margin: 0;">What is your teacher-to-student ratio?</h3>
+                    </div>
+                    <p style="font-size: 16px; line-height: 1.6; color: #666; margin: 16px 0 0 32px;">We maintain a low teacher-to-student ratio of 1:10 to ensure individual attention for each child. For younger age groups (Playgroup), the ratio is even lower at 1:8.</p>
+                </div>
+                
+                <div style="margin-bottom: 24px; background: #fff7ed; padding: 24px; border-radius: 12px;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-question-circle" style="color: #d4a574; font-size: 20px; margin-top: 2px;"></i>
+                        <h3 style="font-size: 18px; font-weight: 600; color: #3f1444; margin: 0;">Do you have CCTV monitoring?</h3>
+                    </div>
+                    <p style="font-size: 16px; line-height: 1.6; color: #666; margin: 16px 0 0 32px;">Yes, our entire facility is equipped with CCTV cameras for security. Parents can request access to live feeds through our secure parent portal, ensuring complete transparency and peace of mind.</p>
+                </div>
+                
+                <div style="margin-bottom: 24px; background: #fff7ed; padding: 24px; border-radius: 12px;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-question-circle" style="color: #d4a574; font-size: 20px; margin-top: 2px;"></i>
+                        <h3 style="font-size: 18px; font-weight: 600; color: #3f1444; margin: 0;">How do I enroll my child?</h3>
+                    </div>
+                    <p style="font-size: 16px; line-height: 1.6; color: #666; margin: 16px 0 0 32px;">You can enroll by visiting our school, calling us at +91 9032249494, or filling out the contact form on our website. We recommend scheduling a school tour first to meet our teachers and see our facilities.</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 64px; padding: 40px; background: #fff7ed; border-radius: 16px;">
+                    <h2 style="font-size: 28px; color: #3f1444; margin-bottom: 16px;">Still Have Questions?</h2>
+                    <p style="font-size: 16px; color: #666; margin-bottom: 24px;">We're here to help! Contact us directly for personalized answers.</p>
+                    <a href="contact.html" class="btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i><a href="tel:+919032249494">+91 9032249494</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 St. Vincent's Preschool</p></div>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/919032249494" class="whatsapp-widget" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script src="js/main.js"></script>
 </body>
 </html>

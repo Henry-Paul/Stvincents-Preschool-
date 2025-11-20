@@ -1,128 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact St. Vincent's Preschool in Chandanagar, Hyderabad. Visit us, call, or send a message to enroll your child.">
-    <meta name="theme-color" content="#3f1444">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Contact Us - St. Vincent's Preschool</title>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — St. Vincent's Preschool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo"><div class="logo-text"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div></a>
-            <nav class="nav-desktop">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="programs.html" class="nav-link">Programs</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
-                <a href="blogs.html" class="nav-link">Blog</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
-                <a href="contact.html" class="btn-primary nav-cta">Contact</a>
-            </nav>
-            <button id="menu-btn" class="menu-btn"><span class="menu-icon"><span></span><span></span><span></span></span></button>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.png" class="logo"><div class="brand-text"><div class="title">St. Vincent's</div></div></a>
+      <nav class="nav-desktop"><a href="index.html">Home</a><a href="programs.html">Programs</a><a href="gallery.html">Gallery</a><a href="blog.html">Resources</a></nav>
+      <button id="menu-btn" class="menu-btn"></button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu hidden">...</div>
+  </header>
+
+  <main class="container py-10">
+    <h1>Find Us</h1>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h3>Visit Our Campus</h3>
+        <p class="muted">Street 1, Plot 454, Aparna Hillpark Rd, KSR Layout, PJR Layout, Chandanagar, Hyderabad, Telangana 500050</p>
+        <p class="mt-4"><a class="btn-primary" href="https://www.google.com/maps/place/Chandanagar" target="_blank">Open in Maps</a></p>
+      </div>
+
+      <div>
+        <h3>Get Directions</h3>
+        <!-- Embed Google Maps iframe -->
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=St.+Vincent's+Preschool+Chandanagar&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        <nav id="mobile-menu" class="mobile-menu">
-            <a href="index.html" class="mobile-menu-link"><i class="fas fa-home"></i> Home</a>
-            <a href="programs.html" class="mobile-menu-link"><i class="fas fa-graduation-cap"></i> Programs</a>
-            <a href="gallery.html" class="mobile-menu-link"><i class="fas fa-images"></i> Gallery</a>
-            <a href="contact.html" class="mobile-menu-link mobile-menu-cta"><i class="fas fa-envelope"></i> Contact</a>
-        </nav>
-    </header>
-    
-    <main>
-        <section style="background: linear-gradient(135deg, #3f1444 0%, #5a1d5e 100%); padding: 80px 0 60px; color: white; text-align: center;">
-            <div class="container">
-                <h1 style="font-size: 48px; margin-bottom: 16px;">Get In Touch</h1>
-                <p style="font-size: 18px; opacity: 0.9;">We'd love to hear from you. Contact us today to schedule a visit!</p>
-            </div>
-        </section>
-        
-        <section style="padding: 80px 0; background: white;">
-            <div class="container">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 64px;">
-                    <div style="padding: 32px; background: #fff7ed; border-radius: 16px; text-align: center;">
-                        <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #3f1444, #5a1d5e); color: white; font-size: 28px; border-radius: 50%; margin-bottom: 24px;">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 style="font-size: 20px; color: #3f1444; margin-bottom: 12px;">Visit Us</h3>
-                        <p style="font-size: 16px; color: #666; line-height: 1.6;">Plot 454, Aparna Hillpark Rd<br>Chandanagar, Hyderabad<br>Telangana 500050</p>
-                    </div>
-                    
-                    <div style="padding: 32px; background: #fff7ed; border-radius: 16px; text-align: center;">
-                        <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #d4a574, #b8864a); color: white; font-size: 28px; border-radius: 50%; margin-bottom: 24px;">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3 style="font-size: 20px; color: #3f1444; margin-bottom: 12px;">Call Us</h3>
-                        <p style="font-size: 16px; color: #666; line-height: 1.6;"><a href="tel:+919032249494" style="color: #3f1444; font-weight: 600;">+91 9032249494</a><br>Mon-Fri: 9 AM - 7 PM<br>Sat: 9 AM - 1 PM</p>
-                    </div>
-                    
-                    <div style="padding: 32px; background: #fff7ed; border-radius: 16px; text-align: center;">
-                        <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #3f1444, #5a1d5e); color: white; font-size: 28px; border-radius: 50%; margin-bottom: 24px;">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 style="font-size: 20px; color: #3f1444; margin-bottom: 12px;">Email Us</h3>
-                        <p style="font-size: 16px; color: #666; line-height: 1.6;"><a href="mailto:Stvincent.school25@gmail.com" style="color: #3f1444; font-weight: 600; word-break: break-word;">Stvincent.school25@gmail.com</a><br>We reply within 24 hours</p>
-                    </div>
-                </div>
-                
-                <div style="max-width: 700px; margin: 0 auto;">
-                    <h2 style="font-size: 36px; color: #3f1444; margin-bottom: 24px; text-align: center;">Send Us a Message</h2>
-                    <form id="contact-form">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 24px;">
-                            <div>
-                                <label for="from_name" style="display: block; font-weight: 600; color: #333; margin-bottom: 8px; font-size: 14px;">Your Name *</label>
-                                <input type="text" id="from_name" name="from_name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;" placeholder="Enter your name">
-                            </div>
-                            <div>
-                                <label for="user_email" style="display: block; font-weight: 600; color: #333; margin-bottom: 8px; font-size: 14px;">Email Address *</label>
-                                <input type="email" id="user_email" name="user_email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;" placeholder="your@email.com">
-                            </div>
-                        </div>
-                        <div style="margin-bottom: 24px;">
-                            <label for="user_phone" style="display: block; font-weight: 600; color: #333; margin-bottom: 8px; font-size: 14px;">Phone Number *</label>
-                            <input type="tel" id="user_phone" name="user_phone" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;" placeholder="+91 9876543210">
-                        </div>
-                        <div style="margin-bottom: 24px;">
-                            <label for="message" style="display: block; font-weight: 600; color: #333; margin-bottom: 8px; font-size: 14px;">Message *</label>
-                            <textarea id="message" name="message" required rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; resize: vertical;" placeholder="Tell us about your child's age and which program interests you..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary" style="width: 100%; padding: 16px; font-size: 18px;"><i class="fas fa-paper-plane"></i> Send Message</button>
-                    </form>
-                </div>
-                
-                <div style="margin-top: 80px;">
-                    <h2 style="font-size: 36px; color: #3f1444; margin-bottom: 24px; text-align: center;">Find Us</h2>
-                    <div style="width: 100%; height: 400px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1883846829824!2d78.34057431487768!3d17.464386888035596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93dc8c5d69d7%3A0x19688beb6e5bb90c!2sChandanagar%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">Contact</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-phone-alt"></i><a href="tel:+919032249494">+91 9032249494</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 2025 St. Vincent's Preschool</p></div>
-        </div>
-    </footer>
-    
-    <a href="https://wa.me/919032249494" class="whatsapp-widget" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="js/main.js"></script>
+      </div>
+    </div>
+
+    <section class="mt-8">
+      <h2>Schedule a Visit</h2>
+      <form id="contact-form" class="contact-form">
+        <div class="form-group"><label>Parent's Name</label><input name="parentName" required></div>
+        <div class="form-group"><label>Phone Number</label><input name="phone" type="tel" required></div>
+        <div class="form-group"><label>Child's Age</label><select name="childAge" required><option value="">Select</option><option>1.5 to 2 years</option><option>2 to 3 years</option></select></div>
+        <div class="form-group"><label>Program Interested In</label><select name="program" required><option value="">Select</option><option>playgroup</option><option>nursery</option></select></div>
+        <div class="form-group"><label>Message</label><textarea name="message"></textarea></div>
+        <button type="submit" class="crayon-button"><span id="submit-text">Submit Inquiry</span><div id="submit-spinner" class="spinner hidden"></div></button>
+        <p id="contact-form-success-message" class="form-success hidden">Thank you! We'll call you soon!</p>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="js/site-core.js"></script>
 </body>
 </html>

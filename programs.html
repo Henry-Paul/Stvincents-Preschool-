@@ -1,123 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Programs — St. Vincent's Preschool</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore St. Vincent's Preschool programs: Playgroup, Nursery, LKG, UKG, and Daycare. EYFS curriculum for ages 1.5-6 years in Chandanagar, Hyderabad.">
+    <meta name="theme-color" content="#3f1444">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Our Programs - St. Vincent's Preschool</title>
 </head>
 <body>
-  <!-- header (same as index) -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="logo" class="logo">
-        <div class="brand-text">
-          <div class="title">St. Vincent's</div>
-          <div class="subtitle">Preschool & Daycare</div>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><div class="logo-text"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="programs.html" class="nav-link active">Programs</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="contact.html" class="btn-primary nav-cta">Enroll Now</a>
+            </nav>
+            <button id="menu-btn" class="menu-btn"><span class="menu-icon"><span></span><span></span><span></span></span></button>
         </div>
-      </a>
-      <nav id="main-nav" class="nav-desktop">
-        <a href="index.html">Home</a>
-        <a href="programs.html">Programs</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="blog.html">Resources</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button id="menu-btn" class="menu-btn" aria-label="Open menu"></button>
-    </div>
+        <nav id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="mobile-menu-link"><i class="fas fa-home"></i> Home</a>
+            <a href="programs.html" class="mobile-menu-link"><i class="fas fa-graduation-cap"></i> Programs</a>
+            <a href="gallery.html" class="mobile-menu-link"><i class="fas fa-images"></i> Gallery</a>
+            <a href="contact.html" class="mobile-menu-link mobile-menu-cta"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section style="background: linear-gradient(135deg, #3f1444 0%, #5a1d5e 100%); padding: 80px 0 60px; color: white; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 48px; margin-bottom: 16px;">Our Programs</h1>
+                <p style="font-size: 18px; opacity: 0.9;">Age-appropriate curriculum designed for every stage of development</p>
+            </div>
+        </section>
+        
+        <section style="padding: 80px 0; background: white;">
+            <div class="container">
+                <div id="playgroup" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px;">
+                    <div>
+                        <img src="images/programs/playgroup.jpg" alt="Playgroup" style="width: 100%; border-radius: 16px;">
+                    </div>
+                    <div>
+                        <span style="background: #d4a574; color: white; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600;">1.5 - 3 Years</span>
+                        <h2 style="font-size: 36px; color: #3f1444; margin: 16px 0;">Playgroup</h2>
+                        <p style="font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 24px;">Social & sensory exploration for your little ones in a nurturing environment</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Sensory Play Activities</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Social Skills Development</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Motor Skills Enhancement</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Language Exposure</li>
+                        </ul>
+                        <div style="margin-top: 32px;">
+                            <a href="contact.html" class="btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
 
-    <div id="mobile-menu" class="mobile-menu hidden">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Programs</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="blog.html">Resources</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </header>
+                <div id="nursery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px; direction: rtl;">
+                    <div style="direction: ltr;">
+                        <img src="images/programs/nursery.jpg" alt="Nursery" style="width: 100%; border-radius: 16px;">
+                    </div>
+                    <div style="direction: ltr;">
+                        <span style="background: #d4a574; color: white; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600;">3 - 4 Years</span>
+                        <h2 style="font-size: 36px; color: #3f1444; margin: 16px 0;">Nursery</h2>
+                        <p style="font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 24px;">Building blocks for a bright future with structured learning</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Language Development</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Pre-Math Concepts</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Creative Arts</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Physical Education</li>
+                        </ul>
+                        <div style="margin-top: 32px;">
+                            <a href="contact.html" class="btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
 
-  <main class="container">
-    <section class="py-10">
-      <h1>Curriculum & Programs</h1>
-      <p class="muted">A structured EYFS-inspired curriculum — learning through play and discovery.</p>
+                <div id="lkg" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px;">
+                    <div>
+                        <img src="images/programs/lkg.jpg" alt="LKG" style="width: 100%; border-radius: 16px;">
+                    </div>
+                    <div>
+                        <span style="background: #d4a574; color: white; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600;">4 - 5 Years</span>
+                        <h2 style="font-size: 36px; color: #3f1444; margin: 16px 0;">Lower Kindergarten (LKG)</h2>
+                        <p style="font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 24px;">Foundation for formal learning with comprehensive curriculum</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Early Literacy</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Number Skills</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Science Exploration</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Creative Expression</li>
+                        </ul>
+                        <div style="margin-top: 32px;">
+                            <a href="contact.html" class="btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="curriculum-grid">
-        <div class="program-card large">
-          <h3>Playgroup</h3>
-          <p>Target Age: 1.5 – 2.5 Years. Social & sensory exploration.</p>
-          <ul>
-            <li>Separation comfort</li>
-            <li>Sensorial play</li>
-            <li>Basic routines</li>
-          </ul>
-          <div class="mt-4"><button class="btn-small open-contact-modal" data-program="Playgroup">Enquire</button></div>
+                <div id="ukg" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px; direction: rtl;">
+                    <div style="direction: ltr;">
+                        <img src="images/programs/ukg.jpg" alt="UKG" style="width: 100%; border-radius: 16px;">
+                    </div>
+                    <div style="direction: ltr;">
+                        <span style="background: #d4a574; color: white; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600;">5 - 6 Years</span>
+                        <h2 style="font-size: 36px; color: #3f1444; margin: 16px 0;">Upper Kindergarten (UKG)</h2>
+                        <p style="font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 24px;">Complete school readiness preparation</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Reading & Writing</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Mathematics</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> General Knowledge</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Computer Basics</li>
+                        </ul>
+                        <div style="margin-top: 32px;">
+                            <a href="contact.html" class="btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="daycare" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                    <div>
+                        <img src="images/programs/daycare.jpg" alt="Daycare" style="width: 100%; border-radius: 16px;">
+                    </div>
+                    <div>
+                        <span style="background: #d4a574; color: white; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600;">1.5+ Years</span>
+                        <h2 style="font-size: 36px; color: #3f1444; margin: 16px 0;">Daycare</h2>
+                        <p style="font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 24px;">Extended care for working parents until 7 PM</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Extended Hours (until 7 PM)</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Meals Included</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Safe Supervision</li>
+                            <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #d4a574; margin-right: 8px;"></i> Homework Support</li>
+                        </ul>
+                        <div style="margin-top: 32px;">
+                            <a href="contact.html" class="btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><span class="logo-main">St. Vincent's</span><span class="logo-sub">PRESCHOOL</span></div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i><a href="tel:+919032249494">+91 9032249494</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 St. Vincent's Preschool</p></div>
         </div>
-
-        <div class="program-card large">
-          <h3>Nursery</h3>
-          <p>Target Age: 2.5 – 3.5 Years. Early literacy & numeracy activities.</p>
-          <ul>
-            <li>Phonics awareness</li>
-            <li>Number recognition</li>
-            <li>Group engagement</li>
-          </ul>
-          <div class="mt-4"><button class="btn-small open-contact-modal" data-program="Nursery">Enquire</button></div>
-        </div>
-
-        <div class="program-card large">
-          <h3>Pre-Primary 1 & 2</h3>
-          <p>Target Age: 3.5 – 6 Years. School readiness & independent learning.</p>
-          <ul>
-            <li>Pre-writing & phonemic awareness</li>
-            <li>Basic arithmetic</li>
-            <li>Confidence & independence</li>
-          </ul>
-          <div class="mt-4"><button class="btn-small open-contact-modal" data-program="Pre-Primary">Enquire</button></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Enquiry inline form (replaced with premium template) -->
-    <section class="py-6">
-      <div class="card">
-        <h2>Enquire About Programs</h2>
-        <form id="contact-form" class="contact-form">
-          <div class="form-group"><label>Parent's Name</label><input name="parentName" required></div>
-          <div class="form-group"><label>Phone Number</label><input name="phone" type="tel" required></div>
-          <div class="form-group"><label>Child's Age</label>
-            <select name="childAge" required>
-              <option value="">Select age range</option>
-              <option>1.5 to 2 years</option>
-              <option>2 to 3 years</option>
-              <option>3 to 4 years</option>
-              <option>4 to 5 years</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Program Interested In</label>
-            <select name="program" required>
-              <option value="">Select a program</option>
-              <option value="playgroup">Playgroup</option>
-              <option value="nursery">Nursery</option>
-              <option value="lkg">Pre-Primary 1</option>
-              <option value="ukg">Pre-Primary 2</option>
-              <option value="daycare">Day Care</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Additional Message (Optional)</label><textarea name="message" rows="3"></textarea></div>
-          <button type="submit" class="crayon-button"><span id="submit-text">Submit Inquiry</span><div id="submit-spinner" class="spinner hidden"></div></button>
-          <p id="contact-form-success-message" class="form-success hidden">Thank you! We'll call you soon!</p>
-          <p id="contact-form-error-message" class="form-error hidden">There was an error submitting your form. Please try again or call us directly.</p>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">© 2025 St. Vincent's Preschool & Daycare</div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="js/site-core.js"></script>
+    </footer>
+    
+    <a href="https://wa.me/919032249494" class="whatsapp-widget" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script src="js/main.js"></script>
 </body>
 </html>
